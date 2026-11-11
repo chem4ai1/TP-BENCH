@@ -11,10 +11,14 @@ outputs of the state-repair ablations reported in the paper.
 
 ```text
 code/core_v3/                two-stage pipeline
-                             - stage A: state-availability checker and repair
-                               operator selection
-                             - stage B: deterministic execution engine
-                             - evaluator and reporting utilities
+                             - schema_checker.py: Stage A state-availability
+                               checker and repair-operator selection
+                             - population_engine.py: Stage B deterministic
+                               execution of P/N/D/Ans
+                             - evidence_builder.py, state_builder.py,
+                               data_loader.py, evaluator.py,
+                               strict_metrics.py, object_inventory.py,
+                               llm_client.py, config.py
 code/run_v3.py               pipeline entry point
 code/build_state_specs.py    rebuilds the 412 per-task state specifications
 code/evaluate_state_transition.py
