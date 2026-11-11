@@ -1,0 +1,28 @@
+{
+  "v1": {
+    "version": "v2.1.460-empty",
+    "relation_instances": 132,
+    "core_counts": {
+      "supported_by": 0,
+      "uses_station": 0,
+      "station_has_type": 0,
+      "applies_model": 0,
+      "reports_variable": 0
+    }
+  },
+  "v2": {
+    "version": "v2.1.461-backfilled",
+    "relation_instances": 842,
+    "core_counts": {
+      "uses_station": 89,
+      "hasStationRole": 89,
+      "station_has_type": 59,
+      "applies_model": 77,
+      "hasModelRole": 52,
+      "reports_variable": 214,
+      "mentions": 130
+    },
+    "individuals": 411,
+    "relations": 26
+  }
+}

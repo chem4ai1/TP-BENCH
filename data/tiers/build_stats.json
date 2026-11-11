@@ -1,0 +1,43 @@
+{
+  "total": 388,
+  "by_tier": {
+    "A": 88,
+    "B": 256,
+    "C": 44
+  },
+  "by_group": {
+    "role_variant": 26,
+    "granularity": 5,
+    "denominator_share": 7,
+    "unit_rate": 3,
+    "denominator_shift": 3,
+    "model_role": 54,
+    "top_k": 12,
+    "trend": 16,
+    "crosstab": 6,
+    "negative_population": 1,
+    "role_union": 16,
+    "set_intersection": 1,
+    "set_difference": 1,
+    "negative_absence": 37,
+    "sameas_dedup": 1,
+    "role_schema_gap": 1,
+    "evidence_verification": 1,
+    "version_comparability": 1,
+    "ontology_nested": 8,
+    "station_role": 18,
+    "data_object": 60,
+    "denominator": 16,
+    "set_operation": 30,
+    "masking": 10,
+    "alias": 10,
+    "stress_combo": 44
+  },
+  "gold_status": {
+    "verified": 80,
+    "expert_design": 18,
+    "evidence-backed": 246,
+    "stress": 44
+  },
+  "polished": 300
+}

@@ -1,0 +1,5753 @@
+{
+  "version": "2.1.460",
+  "base_uri": "https://cern-qa.local/ontology#",
+  "updated_at": "2026-10-23T01:13:07",
+  "classes": [
+    {
+      "id": "Paper",
+      "label": "论文",
+      "description": "一篇与生态科学数据相关的学术论文。",
+      "parent": null,
+      "status": "core",
+      "examples": [
+        "doc003",
+        "ndoc001"
+      ],
+      "source": "manual",
+      "marks": [
+        {
+          "mark": "relation_backfilled",
+          "note": "D13",
+          "created_at": "2026-10-23T01:12:24"
+        }
+      ]
+    },
+    {
+      "id": "OnlineServiceSystem",
+      "label": "在线数据服务系统",
+      "description": "提供生态/地球系统科学数据下载或共享的在线平台，统一归一为 cnern/nesdc/cern/nsti。",
+      "parent": null,
+      "status": "core",
+      "examples": [
+        "国家生态科学数据中心",
+        "国家地球系统科学数据中心"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "Provider",
+      "label": "数据提供方",
+      "description": "数据集的提供机构或平台。",
+      "parent": null,
+      "status": "extended",
+      "examples": [
+        "CNERN",
+        "NESDC"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "Dataset",
+      "label": "数据集",
+      "description": "论文使用的、由网站或数据中心提供的数据集合。",
+      "parent": null,
+      "status": "extended",
+      "examples": [
+        "CNERN 通量数据",
+        "NESDC 气象数据"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "DatasetProfile",
+      "label": "数据集粒度画像",
+      "description": "描述数据集的时间分辨率、空间分辨率、覆盖时段、提供方等属性。",
+      "parent": "Dataset",
+      "status": "extended",
+      "examples": [
+        "日值 2003-2010",
+        "1km 栅格"
+      ],
+      "source": "manual",
+      "marks": [
+        {
+          "mark": "instance_backfilled",
+          "note": "D10",
+          "created_at": "2026-10-23T01:12:22"
+        },
+        {
+          "mark": "relation_backfilled",
+          "note": "D13",
+          "created_at": "2026-10-23T01:12:24"
+        }
+      ]
+    },
+    {
+      "id": "EcologicalStation",
+      "label": "生态站点",
+      "description": "CERN 长期定位观测站或论文中使用的生态观测站点。",
+      "parent": null,
+      "status": "core",
+      "examples": [
+        "长白山站",
+        "海北站",
+        "禹城站"
+      ],
+      "source": "manual",
+      "marks": [
+        {
+          "mark": "relation_backfilled",
+          "note": "D14",
+          "created_at": "2026-10-23T01:12:24"
+        }
+      ]
+    },
+    {
+      "id": "StationType",
+      "label": "生态系统类型",
+      "description": "站点的生态系统分类，如农田、森林、草地、荒漠等。",
+      "parent": null,
+      "status": "core",
+      "examples": [
+        "农田生态系统",
+        "森林生态系统",
+        "草地生态系统"
+      ],
+      "source": "manual",
+      "marks": [
+        {
+          "mark": "used_in_stats",
+          "note": "composite_expansion",
+          "created_at": "2026-10-23T01:12:22"
+        }
+      ]
+    },
+    {
+      "id": "GeoEntity",
+      "label": "地理实体",
+      "description": "论文研究区涉及的地理单元，包括气候带、生态区、流域、海拔带、行政区。",
+      "parent": null,
+      "status": "extended",
+      "examples": [
+        "青藏高原",
+        "亚热带季风区"
+      ],
+      "source": "manual",
+      "marks": [
+        {
+          "mark": "relation_backfilled",
+          "note": "D14",
+          "created_at": "2026-10-23T01:12:24"
+        }
+      ]
+    },
+    {
+      "id": "ClimateZone",
+      "label": "气候带",
+      "description": "按热量/水分条件划分的气候区域。",
+      "parent": "GeoEntity",
+      "status": "extended",
+      "examples": [
+        "温带",
+        "亚热带",
+        "干旱区",
+        "半干旱区"
+      ],
+      "source": "manual",
+      "marks": [
+        {
+          "mark": "used_in_stats",
+          "note": "composite_expansion",
+          "created_at": "2026-10-23T01:12:22"
+        }
+      ]
+    },
+    {
+      "id": "Ecoregion",
+      "label": "生态区/植被区",
+      "description": "具有相对一致生态系统或植被类型的区域。",
+      "parent": "GeoEntity",
+      "status": "extended",
+      "examples": [
+        "亚热带常绿针阔混交林",
+        "温带草原"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "Watershed",
+      "label": "流域",
+      "description": "河流或水系的集水区域。",
+      "parent": "GeoEntity",
+      "status": "extended",
+      "examples": [
+        "黑河流域"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "ElevationBand",
+      "label": "海拔带",
+      "description": "按海拔划分的地理带。",
+      "parent": "GeoEntity",
+      "status": "extended",
+      "examples": [
+        "3000-4000m"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "AdminRegion",
+      "label": "行政区",
+      "description": "省、市、县等行政单元。",
+      "parent": "GeoEntity",
+      "status": "extended",
+      "examples": [
+        "内蒙古自治区"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "DataTheme",
+      "label": "数据主题",
+      "description": "网站数据的主题类别，如气象/气候、土壤、植被/生态、通量/碳循环。",
+      "parent": null,
+      "status": "core",
+      "examples": [
+        "气象/气候",
+        "土壤",
+        "通量/碳循环"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "Variable",
+      "label": "观测/数据变量",
+      "description": "论文使用的具体数据变量，如气温、降水、LAI、NPP、NEE。",
+      "parent": null,
+      "status": "extended",
+      "examples": [
+        "气温",
+        "降水量",
+        "LAI",
+        "NPP"
+      ],
+      "source": "manual",
+      "marks": [
+        {
+          "mark": "used_in_stats",
+          "note": "composite_expansion",
+          "created_at": "2026-10-23T01:12:22"
+        },
+        {
+          "mark": "cross_source_aligned",
+          "note": "D12",
+          "created_at": "2026-10-23T01:12:23"
+        }
+      ]
+    },
+    {
+      "id": "Unit",
+      "label": "单位",
+      "description": "变量的计量单位与量纲。",
+      "parent": null,
+      "status": "extended",
+      "examples": [
+        "℃",
+        "mm",
+        "gC/m2/day"
+      ],
+      "source": "manual",
+      "marks": [
+        {
+          "mark": "used_in_stats",
+          "note": "composite_expansion",
+          "created_at": "2026-10-23T01:12:22"
+        }
+      ]
+    },
+    {
+      "id": "DataUsage",
+      "label": "数据用途",
+      "description": "网站数据在论文中的使用场景，如模型驱动、验证、率定、格局分析。",
+      "parent": null,
+      "status": "core",
+      "examples": [
+        "模型驱动/输入",
+        "模型验证/精度评价"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "AlgorithmModel",
+      "label": "算法/模型",
+      "description": "论文用于处理数据或模拟过程的算法、统计模型或过程模型。",
+      "parent": null,
+      "status": "core",
+      "examples": [
+        "随机森林",
+        "CENTURY",
+        "CLM5",
+        "FORCCHN"
+      ],
+      "source": "manual",
+      "marks": [
+        {
+          "mark": "used_in_stats",
+          "note": "composite_expansion",
+          "created_at": "2026-10-23T01:12:22"
+        },
+        {
+          "mark": "alias_aligned",
+          "note": "D09",
+          "created_at": "2026-10-23T01:12:22"
+        }
+      ]
+    },
+    {
+      "id": "ModelType",
+      "label": "模型类别",
+      "description": "按方法学划分的模型类型。",
+      "parent": null,
+      "status": "extended",
+      "examples": [
+        "过程模型",
+        "统计模型",
+        "机器学习模型",
+        "陆面模型",
+        "蒸散发模型"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "ModelProfile",
+      "label": "模型特征画像",
+      "description": "描述模型的类型、时间步长、空间分辨率、驱动变量、输出变量、率定与验证情况。",
+      "parent": "AlgorithmModel",
+      "status": "extended",
+      "examples": [
+        "FORCCHN 日尺度碳通量模型"
+      ],
+      "source": "manual",
+      "marks": [
+        {
+          "mark": "used_in_stats",
+          "note": "composite_expansion",
+          "created_at": "2026-10-23T01:12:22"
+        }
+      ]
+    },
+    {
+      "id": "ObservationMethod",
+      "label": "观测/实验方法",
+      "description": "论文获取数据的方法，包括通量观测、样地调查、遥感反演、模型模拟、控制实验。",
+      "parent": null,
+      "status": "extended",
+      "examples": [
+        "涡度相关",
+        "样地调查",
+        "遥感反演"
+      ],
+      "source": "manual",
+      "marks": [
+        {
+          "mark": "used_in_stats",
+          "note": "D11",
+          "created_at": "2026-10-23T01:12:22"
+        }
+      ]
+    },
+    {
+      "id": "FluxTower",
+      "label": "通量塔观测",
+      "description": "基于涡度相关技术的碳水热通量观测。",
+      "parent": "ObservationMethod",
+      "status": "extended",
+      "examples": [],
+      "source": "manual"
+    },
+    {
+      "id": "PlotSurvey",
+      "label": "样地调查",
+      "description": "通过固定样地进行的群落、生物量或土壤调查。",
+      "parent": "ObservationMethod",
+      "status": "extended",
+      "examples": [],
+      "source": "manual"
+    },
+    {
+      "id": "RemoteSensing",
+      "label": "遥感反演",
+      "description": "利用卫星/航空影像反演地表参数。",
+      "parent": "ObservationMethod",
+      "status": "extended",
+      "examples": [],
+      "source": "manual"
+    },
+    {
+      "id": "ModelSimulation",
+      "label": "模型模拟",
+      "description": "用过程模型或统计模型模拟生态系统过程。",
+      "parent": "ObservationMethod",
+      "status": "extended",
+      "examples": [],
+      "source": "manual"
+    },
+    {
+      "id": "ManipulationExperiment",
+      "label": "控制实验",
+      "description": "施肥、灌溉、增温、控水等人为控制实验。",
+      "parent": "ObservationMethod",
+      "status": "extended",
+      "examples": [],
+      "source": "manual"
+    },
+    {
+      "id": "ResearchScale",
+      "label": "研究尺度",
+      "description": "研究的空间/时间尺度层级。",
+      "parent": null,
+      "status": "extended",
+      "examples": [
+        "样地尺度",
+        "站点尺度",
+        "区域尺度",
+        "全国尺度"
+      ],
+      "source": "manual",
+      "marks": [
+        {
+          "mark": "used_in_stats",
+          "note": "composite_expansion",
+          "created_at": "2026-10-23T01:12:22"
+        }
+      ]
+    },
+    {
+      "id": "PlotScale",
+      "label": "样地尺度",
+      "description": "以样地为单元的研究尺度。",
+      "parent": "ResearchScale",
+      "status": "extended",
+      "examples": [],
+      "source": "manual"
+    },
+    {
+      "id": "SiteScale",
+      "label": "站点尺度",
+      "description": "以单个生态站为单元的研究尺度。",
+      "parent": "ResearchScale",
+      "status": "extended",
+      "examples": [],
+      "source": "manual"
+    },
+    {
+      "id": "RegionalScale",
+      "label": "区域尺度",
+      "description": "以区域/流域/生态区为单元的研究尺度。",
+      "parent": "ResearchScale",
+      "status": "extended",
+      "examples": [],
+      "source": "manual"
+    },
+    {
+      "id": "NationalScale",
+      "label": "国家尺度",
+      "description": "以全国为范围的研究尺度。",
+      "parent": "ResearchScale",
+      "status": "extended",
+      "examples": [],
+      "source": "manual"
+    },
+    {
+      "id": "GlobalScale",
+      "label": "全球尺度",
+      "description": "以全球为范围的研究尺度。",
+      "parent": "ResearchScale",
+      "status": "extended",
+      "examples": [],
+      "source": "manual"
+    },
+    {
+      "id": "ExperimentalDesign",
+      "label": "实验设计",
+      "description": "论文的观测/实验组织方式，如样地设置、重复、处理。",
+      "parent": null,
+      "status": "extended",
+      "examples": [],
+      "source": "manual"
+    },
+    {
+      "id": "Evidence",
+      "label": "证据",
+      "description": "支持某个抽取结论的原文片段与定位信息。",
+      "parent": null,
+      "status": "extended",
+      "examples": [
+        "doc003#c003 p1 原文句"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "Alias",
+      "label": "别名",
+      "description": "同一实体的不同名称、缩写或译名。",
+      "parent": null,
+      "status": "extended",
+      "examples": [
+        "CLM5-FATES → CLM5",
+        "CENTURY4.6 → CENTURY"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "OntologyProposal",
+      "label": "本体变更提案",
+      "description": "对新增类/属性/关系或实例回填的待审批提案。",
+      "parent": null,
+      "status": "extended",
+      "examples": [
+        "ocp-20261022-b0b90d"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "ConflictRecord",
+      "label": "冲突记录",
+      "description": "同一实体/属性出现不一致取值时的记录。",
+      "parent": null,
+      "status": "extended",
+      "examples": [
+        "站点类型标注冲突"
+      ],
+      "source": "manual"
+    },
+    {
+      "id": "PhotosyntheticallyActiveRadiation",
+      "label": "光合有效辐射",
+      "description": "植物光合作用能够利用的太阳辐射波段（通常为400-700纳米），常作为生态研究中能量输入的关键观测指标。",
+      "parent": "Variable",
+      "status": "proposed",
+      "examples": [
+        "通量塔观测的PAR数据",
+        "MODIS遥感反演PAR产品",
+        "样地调查的光合有效辐射记录"
+      ],
+      "source": "panshi_enrich"
+    },
+    {
+      "id": "SoilRespiration",
+      "label": "土壤呼吸",
+      "description": "土壤中生物（包括根系和微生物）通过呼吸作用向大气释放二氧化碳的生态过程。",
+      "parent": "Variable",
+      "status": "proposed",
+      "examples": [
+        "森林生态系统土壤呼吸通量",
+        "农田土壤二氧化碳排放",
+        "冻土区土壤呼吸速率"
+      ],
+      "source": "panshi_enrich"
+    },
+    {
+      "id": "OntologyElement",
+      "label": "本体元素",
+      "description": "本体中的类、属性、关系或实例的统称。",
+      "parent": null,
+      "status": "extended",
+      "examples": [],
+      "source": "manual_fix"
+    },
+    {
+      "id": "Venue",
+      "label": "发表 venue",
+      "description": "论文发表期刊/会议/出版机构。",
+      "parent": null,
+      "status": "extended",
+      "examples": [],
+      "source": "manual_fix"
+    },
+    {
+      "id": "Concept_70302d20",
+      "label": "草甸生态系统",
+      "description": "草甸生态系统（StationType 的子类）",
+      "parent": "StationType",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_6577ee13",
+      "label": "草原生态系统",
+      "description": "草原生态系统（StationType 的子类）",
+      "parent": "StationType",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_83619886",
+      "label": "荒漠草原生态系统",
+      "description": "荒漠草原生态系统（StationType 的子类）",
+      "parent": "StationType",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_61a8497a",
+      "label": "高寒草甸",
+      "description": "高寒草甸（StationType 的子类）",
+      "parent": "StationType",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_baa8bf9b",
+      "label": "温带草原",
+      "description": "温带草原（StationType 的子类）",
+      "parent": "StationType",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_5ffdcf6d",
+      "label": "荒漠草原",
+      "description": "荒漠草原（StationType 的子类）",
+      "parent": "StationType",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_e9ec9fa7",
+      "label": "高寒气候区",
+      "description": "高寒气候区（ClimateZone 的子类）",
+      "parent": "ClimateZone",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_48554454",
+      "label": "温带气候区",
+      "description": "温带气候区（ClimateZone 的子类）",
+      "parent": "ClimateZone",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_4ce506f9",
+      "label": "亚热带气候区",
+      "description": "亚热带气候区（ClimateZone 的子类）",
+      "parent": "ClimateZone",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_7a92fe9c",
+      "label": "热带气候区",
+      "description": "热带气候区（ClimateZone 的子类）",
+      "parent": "ClimateZone",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_26b75da1",
+      "label": "流域尺度",
+      "description": "流域尺度（ResearchScale 的子类）",
+      "parent": "ResearchScale",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_b62f08bc",
+      "label": "氮沉降",
+      "description": "大气氮输入生态系统的过程",
+      "parent": "Variable",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_326391a0",
+      "label": "通量塔观测",
+      "description": "通量塔观测（ObservationMethod 的子类）",
+      "parent": "ObservationMethod",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_0c75d407",
+      "label": "样地调查",
+      "description": "样地调查（ObservationMethod 的子类）",
+      "parent": "ObservationMethod",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_0a3a3e7e",
+      "label": "遥感反演",
+      "description": "遥感反演（ObservationMethod 的子类）",
+      "parent": "ObservationMethod",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    },
+    {
+      "id": "Concept_74e74fac",
+      "label": "控制实验",
+      "description": "控制实验（ObservationMethod 的子类）",
+      "parent": "ObservationMethod",
+      "status": "proposed",
+      "examples": [],
+      "source": "benchmark"
+    }
+  ],
+  "properties": [
+    {
+      "id": "paper.doc_id",
+      "label": "论文ID",
+      "domain": "Paper",
+      "range": "xsd:string",
+      "desc": "论文唯一标识。"
+    },
+    {
+      "id": "paper.title",
+      "label": "标题",
+      "domain": "Paper",
+      "range": "xsd:string",
+      "desc": "论文标题。"
+    },
+    {
+      "id": "paper.year",
+      "label": "发表年份",
+      "domain": "Paper",
+      "range": "xsd:gYear",
+      "desc": "论文发表年份。"
+    },
+    {
+      "id": "paper.doi",
+      "label": "DOI",
+      "domain": "Paper",
+      "range": "xsd:string",
+      "desc": "论文 DOI。"
+    },
+    {
+      "id": "paper.journal",
+      "label": "期刊",
+      "domain": "Paper",
+      "range": "xsd:string",
+      "desc": "发表期刊。"
+    },
+    {
+      "id": "station.name_cn",
+      "label": "中文名",
+      "domain": "EcologicalStation",
+      "range": "xsd:string",
+      "desc": "站点中文名。"
+    },
+    {
+      "id": "station.abbr",
+      "label": "缩写",
+      "domain": "EcologicalStation",
+      "range": "xsd:string",
+      "desc": "站点英文缩写。"
+    },
+    {
+      "id": "station.type",
+      "label": "生态系统类型",
+      "domain": "EcologicalStation",
+      "range": "StationType",
+      "desc": "站点所属生态系统类型。"
+    },
+    {
+      "id": "station.latitude",
+      "label": "纬度",
+      "domain": "EcologicalStation",
+      "range": "xsd:decimal",
+      "desc": "站点纬度。"
+    },
+    {
+      "id": "station.longitude",
+      "label": "经度",
+      "domain": "EcologicalStation",
+      "range": "xsd:decimal",
+      "desc": "站点经度。"
+    },
+    {
+      "id": "station.elevation",
+      "label": "海拔",
+      "domain": "EcologicalStation",
+      "range": "xsd:decimal",
+      "desc": "站点海拔（m）。"
+    },
+    {
+      "id": "dataset.name",
+      "label": "数据集名称",
+      "domain": "Dataset",
+      "range": "xsd:string",
+      "desc": "数据集名称。"
+    },
+    {
+      "id": "dataset.provider",
+      "label": "提供方",
+      "domain": "Dataset",
+      "range": "Provider",
+      "desc": "数据集提供机构。"
+    },
+    {
+      "id": "dataset.temporal_resolution",
+      "label": "时间分辨率",
+      "domain": "Dataset",
+      "range": "xsd:string",
+      "desc": "日/月/年等时间粒度。"
+    },
+    {
+      "id": "dataset.spatial_resolution",
+      "label": "空间分辨率",
+      "domain": "Dataset",
+      "range": "xsd:string",
+      "desc": "栅格大小或站点尺度。"
+    },
+    {
+      "id": "dataset.period",
+      "label": "覆盖时段",
+      "domain": "Dataset",
+      "range": "xsd:string",
+      "desc": "数据覆盖起止年份。"
+    },
+    {
+      "id": "variable.name",
+      "label": "变量名",
+      "domain": "Variable",
+      "range": "xsd:string",
+      "desc": "变量名称。"
+    },
+    {
+      "id": "variable.theme",
+      "label": "所属主题",
+      "domain": "Variable",
+      "range": "DataTheme",
+      "desc": "变量所属数据主题。"
+    },
+    {
+      "id": "variable.unit",
+      "label": "单位",
+      "domain": "Variable",
+      "range": "Unit",
+      "desc": "变量计量单位。"
+    },
+    {
+      "id": "unit.symbol",
+      "label": "单位符号",
+      "domain": "Unit",
+      "range": "xsd:string",
+      "desc": "单位符号。"
+    },
+    {
+      "id": "unit.dimension",
+      "label": "量纲",
+      "domain": "Unit",
+      "range": "xsd:string",
+      "desc": "物理量纲。"
+    },
+    {
+      "id": "model.name",
+      "label": "模型名",
+      "domain": "AlgorithmModel",
+      "range": "xsd:string",
+      "desc": "模型原文名称。"
+    },
+    {
+      "id": "model.model_type",
+      "label": "模型类别",
+      "domain": "AlgorithmModel",
+      "range": "ModelType",
+      "desc": "过程/统计/机器学习/陆面等。"
+    },
+    {
+      "id": "model.time_step",
+      "label": "时间步长",
+      "domain": "AlgorithmModel",
+      "range": "xsd:string",
+      "desc": "日/月/年步长。"
+    },
+    {
+      "id": "model.spatial_resolution",
+      "label": "空间分辨率",
+      "domain": "AlgorithmModel",
+      "range": "xsd:string",
+      "desc": "模型空间分辨率。"
+    },
+    {
+      "id": "model.drivers",
+      "label": "驱动变量",
+      "domain": "AlgorithmModel",
+      "range": "Variable",
+      "desc": "模型输入变量。"
+    },
+    {
+      "id": "model.outputs",
+      "label": "输出变量",
+      "domain": "AlgorithmModel",
+      "range": "Variable",
+      "desc": "模型输出变量。"
+    },
+    {
+      "id": "geo.name",
+      "label": "地理实体名",
+      "domain": "GeoEntity",
+      "range": "xsd:string",
+      "desc": "地理实体名称。"
+    },
+    {
+      "id": "geo.level",
+      "label": "层级",
+      "domain": "GeoEntity",
+      "range": "xsd:string",
+      "desc": "气候带/生态区/流域/行政区等。"
+    },
+    {
+      "id": "method.method_type",
+      "label": "方法类型",
+      "domain": "ObservationMethod",
+      "range": "xsd:string",
+      "desc": "观测/实验方法类型。"
+    },
+    {
+      "id": "method.instrument",
+      "label": "仪器",
+      "domain": "ObservationMethod",
+      "range": "xsd:string",
+      "desc": "主要观测仪器。"
+    },
+    {
+      "id": "scale.level",
+      "label": "尺度层级",
+      "domain": "ResearchScale",
+      "range": "xsd:string",
+      "desc": "样地/站点/区域/国家/全球。"
+    },
+    {
+      "id": "evidence.quote",
+      "label": "原文",
+      "domain": "Evidence",
+      "range": "xsd:string",
+      "desc": "支持结论的原文句。"
+    },
+    {
+      "id": "evidence.chunk_id",
+      "label": "片段ID",
+      "domain": "Evidence",
+      "range": "xsd:string",
+      "desc": "证据所在 chunk。"
+    },
+    {
+      "id": "proposal.status",
+      "label": "提案状态",
+      "domain": "OntologyProposal",
+      "range": "xsd:string",
+      "desc": "pending/approved/applied/rejected。"
+    },
+    {
+      "id": "conflict.severity",
+      "label": "冲突严重度",
+      "domain": "ConflictRecord",
+      "range": "xsd:string",
+      "desc": "low/medium/high。"
+    },
+    {
+      "id": "alias.pref_label",
+      "label": "首选名",
+      "domain": "Alias",
+      "range": "xsd:string",
+      "desc": "标准名称。"
+    },
+    {
+      "id": "alias.alt_labels",
+      "label": "别名列表",
+      "domain": "Alias",
+      "range": "xsd:string",
+      "desc": "别名/缩写/译名。"
+    },
+    {
+      "id": "soil_respiration.measurement_method",
+      "label": "测量方法",
+      "domain": "SoilRespiration",
+      "range": "ObservationMethod",
+      "desc": "土壤呼吸的常用测定方法（如静态箱法、动态箱法）",
+      "source": "panshi_enrich"
+    },
+    {
+      "id": "soil_respiration.ecosystem_context",
+      "label": "生态系统背景",
+      "domain": "SoilRespiration",
+      "range": "StationType",
+      "desc": "土壤呼吸观测所针对的生态系统类型（如森林、草原）",
+      "source": "panshi_enrich"
+    },
+    {
+      "id": "model.calibration_method",
+      "label": "率定方法",
+      "domain": "AlgorithmModel",
+      "range": "xsd:string",
+      "desc": "模型的参数率定/验证方法",
+      "source": "benchmark"
+    }
+  ],
+  "relations": [
+    {
+      "id": "involves_service",
+      "label": "涉及网站",
+      "domain": "Paper",
+      "range": "OnlineServiceSystem",
+      "desc": "论文引用/使用某在线数据服务系统。"
+    },
+    {
+      "id": "published_in",
+      "label": "发表于",
+      "domain": "Paper",
+      "range": "Venue",
+      "desc": "论文发表于某期刊/会议/出版机构。"
+    },
+    {
+      "id": "uses_station",
+      "label": "使用站点",
+      "domain": "Paper",
+      "range": "EcologicalStation",
+      "desc": "论文使用某生态站点的数据/观测。"
+    },
+    {
+      "id": "has_theme",
+      "label": "涉及主题",
+      "domain": "Paper",
+      "range": "DataTheme",
+      "desc": "论文使用的数据主题。"
+    },
+    {
+      "id": "data_usage",
+      "label": "数据用途",
+      "domain": "Paper",
+      "range": "DataUsage",
+      "desc": "论文使用网站数据的场景。"
+    },
+    {
+      "id": "applies_model",
+      "label": "使用模型",
+      "domain": "Paper",
+      "range": "AlgorithmModel",
+      "desc": "论文应用的算法或模型。"
+    },
+    {
+      "id": "uses_dataset",
+      "label": "使用数据集",
+      "domain": "Paper",
+      "range": "Dataset",
+      "desc": "论文使用的数据集。"
+    },
+    {
+      "id": "reports_variable",
+      "label": "报告变量",
+      "domain": "Paper",
+      "range": "Variable",
+      "desc": "论文使用或报告的数据变量。"
+    },
+    {
+      "id": "uses_method",
+      "label": "使用方法",
+      "domain": "Paper",
+      "range": "ObservationMethod",
+      "desc": "论文获取数据的方法。"
+    },
+    {
+      "id": "has_scale",
+      "label": "研究尺度",
+      "domain": "Paper",
+      "range": "ResearchScale",
+      "desc": "论文研究的空间/时间尺度。"
+    },
+    {
+      "id": "has_geo_scope",
+      "label": "研究区",
+      "domain": "Paper",
+      "range": "GeoEntity",
+      "desc": "论文研究区所属地理实体。"
+    },
+    {
+      "id": "station_located_in",
+      "label": "位于",
+      "domain": "EcologicalStation",
+      "range": "GeoEntity",
+      "desc": "站点所在气候带/生态区/流域。"
+    },
+    {
+      "id": "station_has_type",
+      "label": "站点类型",
+      "domain": "EcologicalStation",
+      "range": "StationType",
+      "desc": "站点的生态系统类型。"
+    },
+    {
+      "id": "model_has_type",
+      "label": "模型类别",
+      "domain": "AlgorithmModel",
+      "range": "ModelType",
+      "desc": "模型的类型。"
+    },
+    {
+      "id": "model_requires_driver",
+      "label": "模型驱动变量",
+      "domain": "AlgorithmModel",
+      "range": "Variable",
+      "desc": "模型输入变量。"
+    },
+    {
+      "id": "model_produces_output",
+      "label": "模型输出变量",
+      "domain": "AlgorithmModel",
+      "range": "Variable",
+      "desc": "模型输出变量。"
+    },
+    {
+      "id": "dataset_has_variable",
+      "label": "数据集变量",
+      "domain": "Dataset",
+      "range": "Variable",
+      "desc": "数据集包含的变量。"
+    },
+    {
+      "id": "dataset_provided_by",
+      "label": "数据提供方",
+      "domain": "Dataset",
+      "range": "Provider",
+      "desc": "数据集提供机构。"
+    },
+    {
+      "id": "supported_by",
+      "label": "证据支持",
+      "domain": "Paper",
+      "range": "Evidence",
+      "desc": "结论由某原文证据支持。"
+    },
+    {
+      "id": "proposes",
+      "label": "提案内容",
+      "domain": "OntologyProposal",
+      "range": "OntologyElement",
+      "desc": "提案拟新增/修改的本体元素（类/属性/关系/实例）。"
+    },
+    {
+      "id": "conflict_about",
+      "label": "冲突对象",
+      "domain": "ConflictRecord",
+      "range": "OntologyElement",
+      "desc": "冲突涉及的实体/属性/关系。"
+    },
+    {
+      "id": "variable_has_unit",
+      "label": "变量单位",
+      "domain": "Variable",
+      "range": "Unit",
+      "desc": "变量使用的计量单位。",
+      "source": "panshi_enrich"
+    },
+    {
+      "id": "related_variable",
+      "label": "相关变量",
+      "domain": "Variable",
+      "range": "Variable",
+      "desc": "两个变量之间存在相关关系",
+      "source": "benchmark"
+    }
+  ],
+  "competency_questions": [
+    "Q1-Q6 基础抽取",
+    "Q7-Q16 计量统计",
+    "R1-R10 推理",
+    "D1-D12 数据扩充"
+  ],
+  "aliases": {
+    "CLM5-FATES": "AlgorithmModel",
+    "LAI": "Variable",
+    "气温": "Variable",
+    "降水": "Variable",
+    "CENTURY4.6": "AlgorithmModel",
+    "DLM": "AlgorithmModel",
+    "NDVI": "Variable"
+  },
+  "unit_mappings": [
+    {
+      "from": "℃",
+      "to": "K",
+      "factor": 273.15
+    }
+  ],
+  "individuals": [
+    {
+      "id": "DSP_doc001_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "生物量/AGB",
+        "provider": "cern",
+        "temporal_resolution": "月",
+        "spatial_resolution": "站点尺度",
+        "period": "2016"
+      },
+      "source": "backfill",
+      "evidence": "来源于国家生态系统观测研 究 网 络 （CERN） 中 心；土壤和植被数据来源于全国第二次土壤普查 内蒙古土种志",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc001_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "GPP/NPP(生产力)",
+        "provider": "cern",
+        "temporal_resolution": "年",
+        "spatial_resolution": "站点尺度",
+        "period": "2016"
+      },
+      "source": "backfill",
+      "evidence": "内蒙古锡林浩特典型草原 ANPP的实验数据1998－2013年来源于国家生态系统观测研 究 网 络 （CERN） 中 心",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc003_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "GPP/NPP(生产力)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "6 个通量站数据来源于国家生态科学数据中心（http://www.cnern.org.cn/）",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc003_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc003_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc003_3",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土壤水分/SWC",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc003_4",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土壤温度",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc003_5",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "相对湿度/水汽压",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc003_6",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "日照/辐射",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc003_7",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "日照/辐射",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc003_8",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "日照/辐射",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc003_9",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "叶面积指数LAI",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "本研究使用的叶面积指数（leaf area index，LAI）数据来源于美国国家航空航天局（NASA）开发的MODIS LAI产品",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc003_10",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土壤有机碳/有机质",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "表中土壤有机质质量分数均为0—10 cm土壤深度的测定值，其中长白山站和鼎湖山站数据来自于基于长期观测和同化的中国典型森林生态系统碳循环研究参照数据集（http://www.cnern.org.cn/data/meta?id=142318）",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc004_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "cnern",
+        "temporal_resolution": "年",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc004_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "年",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc004_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土壤水分/SWC",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc004_3",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "灌溉/施肥/田间管理",
+        "provider": "cnern",
+        "temporal_resolution": "年",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc004_4",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "灌溉/施肥/田间管理",
+        "provider": "cnern",
+        "temporal_resolution": "年",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc004_5",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "生物量/AGB",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc004_6",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土壤有机碳/有机质",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc005_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "植被物候",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2003"
+      },
+      "source": "backfill",
+      "evidence": "物候资料为 2003—2019 年的萌芽期、展叶始期、始花期、盛花期、叶变色期和落叶期数据, 来源于国家生态科学数据中心；物候资料为 2003—2019 年的萌芽期、展叶始期、始花期、盛花期、叶变色期和落叶期数据, 来源于国家生态科学数据中心",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc005_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "cnern",
+        "temporal_resolution": "日",
+        "spatial_resolution": "站点尺度",
+        "period": "2003"
+      },
+      "source": "backfill",
+      "evidence": "气象数据采用 2002—2019 年北京站和 1970—2020 年河北省怀来县气象站的日平均气温数据",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc006_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "气候数据来源于对应站点气象观测场，包括生长季( 4 月至 9 月) 的温度和降水数据；气候数据来源于对应站点气象观测场，包括生长季( 4 月至 9 月) 的温度和降水数据；气候数据来源于对应站点气象观测场，包括生长季( 4 月至 9 月) 的温度和降水数据；气候数据来源于对应站点气象观测场，包括生长季( 4 月至 9 月) 的温度和降水数据；1982—2015 年，6 个站点平均干旱指数分别为 0．0662( CLD) 0．2169( FKD) 0．1485( LZD) 0．2141( SPD) 0．4173( ESD) 和0．4207( NMD)",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc007_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2021"
+      },
+      "source": "backfill",
+      "evidence": "本研究使用了2003年1月1日至2010年12月31日间西双版纳站近地层观测数据；表1西双版纳站气温，降水，风速，相对湿度，净辐射，感热通量，潜热通量及NEE的年平均值；月平均降水差异明显[图1(b)]，雨季(5-10月)降水约占全年降水的80%以上；表1西双版纳站气温，降水，风速，相对湿度，净辐射，感热通量，潜热通量及NEE的年平均值；不同季节相差近4倍，其次是气温，风速和潜热通量以及NEE，不同季节相差近40%；感热通量(SHF)，潜热通量(LHF），净辐射(Rn)及生态系统与大气间净CO交换(NEE)的月平均值；土壤湿度对蒸散发和光合作用限制较小，NOAH方案模拟的土壤湿度限制因子最小",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc007_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "碳水热通量",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2021"
+      },
+      "source": "backfill",
+      "evidence": "碳水热通量观测均是利用涡度相关法直接测定，并由中国通量观测研究联盟完成标准化的质量控制和数据处理；感热通量(SHF)，潜热通量(LHF），净辐射(Rn)及生态系统与大气间净CO交换(NEE)的月平均值",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc007_3",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "古环境/地质资料",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2021"
+      },
+      "source": "backfill",
+      "evidence": "本研究使用了2003年1月1日至2010年12月31日间西双版纳站近地层观测数据",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "相对湿度/水汽压",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_3",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "风速/风向",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_4",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气压",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_5",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土壤有机碳/有机质",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "土壤数据包括 土壤碳密度 2 土壤氮密度 2 田间持水量 萎蔫系数 土壤容重 3 砂粒含量 粉粒含量 黏粒含量",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_6",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土壤养分(氮磷钾)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "土壤数据包括 土壤碳密度 2 土壤氮密度 2 田间持水量 萎蔫系数 土壤容重 3 砂粒含量 粉粒含量 黏粒含量",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_7",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土壤物理性质(质地/容重/pH)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "土壤数据包括 土壤碳密度 2 土壤氮密度 2 田间持水量 萎蔫系数 土壤容重 3 砂粒含量 粉粒含量 黏粒含量",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_8",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土壤物理性质(质地/容重/pH)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "土壤数据包括 土壤碳密度 2 土壤氮密度 2 田间持水量 萎蔫系数 土壤容重 3 砂粒含量 粉粒含量 黏粒含量",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_9",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "叶面积指数LAI",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "遥感数据包括 不同森林植被类型分布图 模拟初始年的最大叶面积和最小叶面积指数 2 2",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_10",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "NEE(净生态系统交换)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "通量数据主要包括生态系统呼吸（ER）和生态系统净 CO交换量 生态系统总初级生产力 和生态系统净初级生产力 计算方法［22］如下",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_11",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "GPP/NPP(生产力)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "通量数据主要包括生态系统呼吸（ER）和生态系统净 CO交换量 生态系统总初级生产力 和生态系统净初级生产力 计算方法［22］如下",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc008_12",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "生态系统呼吸ER",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "通量数据主要包括生态系统呼吸（ER）和生态系统净 CO交换量 生态系统总初级生产力 和生态系统净初级生产力 计算方法［22］如下",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc009_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "月",
+        "spatial_resolution": "站点尺度",
+        "period": "2021"
+      },
+      "source": "backfill",
+      "evidence": "月降雨量与月均温变化如图1所示, 数据来源于国家生态科学数据中心资源共享服务平台；大豆生长期间平均温度为 18.94 ℃(2018 年)和 18.28 ℃(2019年)",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc009_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "数据来源(cnern网站",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2021"
+      },
+      "source": "backfill",
+      "evidence": "(http://www.cnern.org.cn/data/initDRsearch)",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc010_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "cern",
+        "temporal_resolution": "月",
+        "spatial_resolution": "站点尺度",
+        "period": "2018"
+      },
+      "source": "backfill",
+      "evidence": "海北高寒草甸草原的1957－2014年气象数据来源于中国气象科学数据共享网（http： ／／data．cma．cn） ，青海省海北藏族自治州门源县气象观测站 ， 主要包括月降水量、 月平均最高气温、 月平均最低气温、 月平均气温",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc010_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cern",
+        "temporal_resolution": "月",
+        "spatial_resolution": "站点尺度",
+        "period": "2018"
+      },
+      "source": "backfill",
+      "evidence": "海北高寒草甸草原的1957－2014年气象数据来源于中国气象科学数据共享网（http： ／／data．cma．cn） ，青海省海北藏族自治州门源县气象观测站 ， 主要包括月降水量、 月平均最高气温、 月平均最低气温、 月平均气温",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc010_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "生物量/AGB",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2018"
+      },
+      "source": "backfill",
+      "evidence": "1998－2014年地上 生 物 量 ANPP监测数据来源于国家生态系统观测研究网络 （CERN） 中 心 （http： ／／wwwcnern．org．cn） ，地上生物量是海北站矮嵩草草甸8月底地上生物量鲜重和干重",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc010_4",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气候情景/再分析产品",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2018"
+      },
+      "source": "backfill",
+      "evidence": "本研究采 用 了 5 个 大 气 环 流 模 型 （HadGEM2－ES， GFDL－ESM2M，IPSL－CM5A－LR， MIROC－ESM－CHEM 和NorESM1－M）在两种RCP情景下输出的气候数据",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc011_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "生物量/AGB",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "AGB观测资料包括从文献［34－42］ 中和国家生态科学数据中心（海北站，www．cnern．org．cn）搜集的224个AGB实测值；草 地 类 型 AM， AS，TDS，TMS，TSM，TAS，TGM 和 STGC的根冠比分别为 3．09，3．18，6．4，5．2，3．5，5．6，3．5 和3．5",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc012_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "叶面积指数LAI",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2000"
+      },
+      "source": "backfill",
+      "evidence": "遥感数据采用 MODIS8d 合成 LAI 产品( MOD15A2) ( 2000—2018 年，1km) ( https: / / modis． gsfc． nasa． gov / ) 和 GLASS LAI( 1982—2018 年，5 km) ( https: / /glass-product． bnu．edu．cn /)",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc012_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气象要素/综合观测",
+        "provider": "cnern",
+        "temporal_resolution": "日",
+        "spatial_resolution": "站点尺度",
+        "period": "2000"
+      },
+      "source": "backfill",
+      "evidence": "采用 GIDS 对研究区及周边 315 个气象站的逐日数据进行空间插值",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc012_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "GPP/NPP(生产力)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2000"
+      },
+      "source": "backfill",
+      "evidence": "利用海北( 37°36' N，101°20' E，海拔 3160 m)和当雄( 30°51' N，91°05' E，海拔 4333 m) 的通量观测数据( http: / /www．cnern．org．cn /data) 对总初级生产力( GPP) 模拟值进行验证",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc013_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "cern",
+        "temporal_resolution": "月",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "选取月最大温度、最小温度、辐射数据、降水量数据,用于计算实际光能利用率",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc013_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "选取月最大温度、最小温度、辐射数据、降水量数据,用于计算实际光能利用率",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc013_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "日照/辐射",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "选取月最大温度、最小温度、辐射数据、降水量数据,用于计算实际光能利用率",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc013_3",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "生物量/AGB",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "本研究所使用的实测数据主要来源于中国生态系统研究网络(CERN)的地面站点生物量样本数据",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc013_4",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "GPP/NPP(生产力)",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "本研究所使用的实测数据主要来源于中国生态系统研究网络(CERN)的地面站点生物量样本数据,是通过在江西省内特定地点直接进行生物量测定获得的,根据总初级生产力(GPP)与NPP成比例(0.47)的数据关系换算得到样本的植被NPP",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc013_5",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "遥感影像/反射率产品",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "实验使用(通过8d合成)MOD09GA和MYD09GA(空间分辨率500m)的近红外波段、红波段、短波红外地表反射率数据",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc013_6",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土地利用/覆被数据",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "MCD12Q1土地覆盖数据(空间分辨率500m)用于确定不同植被类型分布",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc013_7",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "高程/DEM",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "DEM数据中STRM-V4(空间分辨率90m)和Copernicus DEM(空间分辨率30m)用于计算辐射数据",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc013_8",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "行政边界/道路",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "江西省级行政区划边界数据来源于资源环境科学数据注册与出版系统",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc015_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "日",
+        "spatial_resolution": "站点尺度",
+        "period": "2020"
+      },
+      "source": "backfill",
+      "evidence": "封丘，禹城和栾城站日尺度气象数据从国家生态科学数据中心[21]获得。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_doc015_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "灌溉/施肥/田间管理",
+        "provider": "cnern",
+        "temporal_resolution": "日",
+        "spatial_resolution": "站点尺度",
+        "period": "2020"
+      },
+      "source": "backfill",
+      "evidence": "涉及的作物参数主要有：有效积温参数、作物不同时期含氮量；；封丘、禹城和栾城农业生态站田间管理措施数据从文献资料[24-25]和国家生态科学数据中心[21]获得。；表 2 中列出了播种日期，收获日期，氮肥和灌溉的详细信息。；表 2 中列出了播种日期，收获日期，氮肥和灌溉的详细信息。；表 2 中列出了播种日期，收获日期，氮肥和灌溉的详细信息。；表 2 中列出了播种日期，收获日期，氮肥和灌溉的详细信息。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc001_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "叶面积指数LAI",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2014"
+      },
+      "source": "backfill",
+      "evidence": "研究采用的MODIS LAI为MCD15A2H第6版本数据集和MOD15A2H第6版本数据集，前者由Terra和Aqua的采集数据组合生成，后者则源自Terra星。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc001_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土地利用/覆被数据",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2014"
+      },
+      "source": "backfill",
+      "evidence": "研究所采用的土地覆盖数据为MCD12Q1产品，由每年Terra和Aqua观测所得的数据经监督决策树分类处理所得。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc001_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "植被指数NDVI/EVI",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2014"
+      },
+      "source": "backfill",
+      "evidence": "产品的反演算法除了采用三维辐射传输模型算法模拟生成查找表的主算法外，还根据不同植被类型建立LAI与归一化植被指数（NDVI）的经验回归方程来构建备用算法。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc001_3",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "生物监测/观测样地",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2014"
+      },
+      "source": "backfill",
+      "evidence": "本文的数据来源于国家科技基础条件平台-国家生态科学数据中心(http://www.nesdc.org.cn)、江西鹰潭农田生态系统国家野外科学观测研究站（http://ww.yingtan.cerm.ac.cn）。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc002_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "nesdc",
+        "temporal_resolution": "日",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "气象数据均下载于中国气象数据网( : ) ，选取研究区垦利站的日气温、气压、风速等气象要素，作为 模型的输入参数。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc002_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气压",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "气象数据均下载于中国气象数据网( : ) ，选取研究区垦利站的日气温、气压、风速等气象要素，作为 模型的输入参数。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc002_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "风速/风向",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "气象数据均下载于中国气象数据网( : ) ，选取研究区垦利站的日气温、气压、风速等气象要素，作为 模型的输入参数。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc002_4",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "碳水热通量",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "通量站验证数据来源于国家生态科学数据中心( :      ) ，山东禹城农田生态系统国家野外科学观测研究站的通量数据产品是利用 技术体系进行标准化的质量控制和数据处理后的通量日值数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc002_5",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "遥感影像/反射率产品",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "数据来源于美国地质调查局网站 ( :     ) ， 传 感 器 包 括 了传感器所有的波段，并对波段进行了重新调整，能够更好地避免大气吸收特征， 的第波段空间分辨率为 ，第   波段为热红外波段，空间分辨率为  ，回访周期均为  。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc002_6",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "地表温度LST",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "数据是 地表温度产品，空间分辨率为 ，时间分辨率为 。 、数据均来源于美国航天局网站( :urs.earthdata.nasa.gov/）。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc002_7",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "遥感影像/反射率产品",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": " 产品提供了  个波段的地表反射率，空间分辨率为 ，回访周期为 。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc002_8",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土地利用/覆被数据",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "在参考研究区已有土地利用类型图的基础上，根据黄河三角洲 年一期 遥感影像，按照自然资源部土地分类标准分类并制作了研究区的土地利用现状图，如图  所示，主要包括林地、水体、滩涂、农田、芦苇沼泽和 建 设 用 地  种土地利用类型。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc004_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "群落/物种多样性",
+        "provider": "nesdc",
+        "temporal_resolution": "年",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "为了验证 CLM5‐FATES 模式在长白山阔叶红松林永久样地的针阔混交林的参数敏感性，笔者使用了《2003-2008 年吉林长白山站植物群落 种 类 组 成 与 物 质 生 产 观 测 数 据 》中 2005 年 阔 叶 红 松 林 综 合 观 测 场 乔木 层 植 物 种 组 成 数 据（韩 士 杰，2012）.",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc004_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土地利用/覆被数据",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "为了评估 CLM5‐FATES 模式对长白山地区针阔混交林的模拟效果，使用了中山大学全球变化与陆地生态系统模型研究团队的中国土地利用覆盖和 变 化 数 据 集.",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc004_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气象要素/综合观测",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "GSWP3v1（Global Soil Wetness Project phase 3version 1）的 1991 年 至 2010 年 的 气 象 数 据.",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc004_3",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气象要素/综合观测",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "还 使 用 了 CRUNCEPv7（Climatic Research Unit National Centers for Environmental Prediction ver‐sion 7）中 1991 年 至 2010 年 的 气 象 数 据.",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc007_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc007_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "降水量",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc007_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "相对湿度/水汽压",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc007_3",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "风速/风向",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc007_4",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "气压",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc007_5",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "日照/辐射",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc007_6",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "叶面积指数LAI",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "农田数据包含作物物候记录(用于模型播种时间、收获时间和种植时长等参数的设定)、叶面积指数(leaf area index, LAI)和作物产量数据(用于模型模拟结果的验证)。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc007_7",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "作物物候/种植结构",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "农田数据包含作物物候记录(用于模型播种时间、收获时间和种植时长等参数的设定)、叶面积指数(leaf area index, LAI)和作物产量数据(用于模型模拟结果的验证)。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc007_8",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "作物产量/产值",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "农田数据包含作物物候记录(用于模型播种时间、收获时间和种植时长等参数的设定)、叶面积指数(leaf area index, LAI)和作物产量数据(用于模型模拟结果的验证)。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc007_9",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "GPP/NPP(生产力)",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "通量数据的时间分辨率为0.5 h，包含碳通量——生态系统总初级生产力(gross primary production，GPP)和热通量——潜热通量(latent heat flux, LE)。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc007_10",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "碳水热通量",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "通量数据的时间分辨率为0.5 h，包含碳通量——生态系统总初级生产力(gross primary production，GPP)和热通量——潜热通量(latent heat flux, LE)。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc009_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "蒸散发/ET",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "地表蒸散发数据（2015年、1000m）来源于国家生态系统观测研究网络科技资源服务系统",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc009_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土壤类型/属性",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "土壤数据（2020年、100m）、土地利用数据（2020年、30m）来源于中国科学院资源环境科学与数据中心",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc009_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "行政边界/道路",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "土壤数据（2020年、100m）、土地利用数据（2020年、30m）来源于中国科学院资源环境科学与数据中心；道路数据（2020年）、水系数据（2020年）来源于 Open Street Map；行政区划数据（2020 年）来源于国家地理信息公共服务平台",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc009_3",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "植被指数NDVI/EVI",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "归一化植被指数（2020 年、30 m）来源于国家生态科学数据中心",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc011_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "植被指数NDVI/EVI",
+        "provider": "nesdc",
+        "temporal_resolution": "年",
+        "spatial_resolution": "unknown",
+        "period": "2050"
+      },
+      "source": "backfill",
+      "evidence": "网络下载数据主要来自全球生物多样性信息网 络 平 台 (https://www. gbif. org/, GBIF)、 iDigBio数据库 (https://www. idigbio. org/) 和国家青藏高原科学数据中心；其中 NDVI 来 自 2000—2022 年 中 国 30 m 年 最 大 NDVI 数 据 集 (https://www. nesdc. org. cn/)",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc011_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "径流/流量",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2050"
+      },
+      "source": "backfill",
+      "evidence": "水网 密 度 来 自 三 江 源 1∶ 25 万 水 系 数 据 集 (2015)(https://data. tpdc. ac. cn/)，通过 ArcMap 10. 8 中欧氏距离工具生成",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc012_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "行政边界/道路",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "本文研究数据主要有行政边界数据、土地利用数据、地形地貌数据；广西石漠化边界数据来源于国家生态数据中心资源共享服务平台西南岩溶石漠化综合治理工程边界数据集；30m土地利用数据来源于武汉大学土地利用和覆盖年度数据集(CLCD；水系数据、道路网数据来源于OSM；自然保护区数据包括国家级自然保护区和省级自然保护区矢量数据,来源于数字地球开放平台",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc013_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土地利用/覆被数据",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc013_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "植被指数NDVI/EVI",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "归一化植被指数（NDVI）在国家生态科学数据中心（http://www.nesdc.org.cn/）下载",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc013_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "降水量",
+        "provider": "nesdc",
+        "temporal_resolution": "年",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心；土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc013_3",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "人口/GDP/社会经济",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心；土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc014_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "降水量",
+        "provider": "nesdc",
+        "temporal_resolution": "年",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "利用年降水栅格数据以及气象站站点的数据进行克里金插值确立。；利用年降水栅格数据以及气象站站点的数据进行克里金插值确立。；气温数据来自国家地球系统科学数据中心（http:/www.geodata.cn/），空间分辨率为 1 km。；降雨数据来自 NOAA（https://gis.ncdc.noaa.gov），空间分辨率为 1 km",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc014_1",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "植被指数NDVI/EVI",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "NDVI 数据来源于中国科学院生态科学数据中心（http://www.nesdc.org.cn/）。；人口密度、GDP 等人文经济数据来自 2000－2020 年四川省、陕西省、重庆市、甘肃省等各省市统计年鉴。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc014_2",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土壤水分/SWC",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "包含土壤类型、土壤质地、含沙量、土壤含水量等数据。",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc014_3",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "土地利用/覆被数据",
+        "provider": "nesdc",
+        "temporal_resolution": "年",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "土地利用数据来源于中国科学院资源环境科学与数据中心（https://www.resdc.cn/）",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "DSP_ndoc015_0",
+      "class": "DatasetProfile",
+      "attributes": {
+        "name": "植被指数NDVI/EVI",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "NDVI）来源于中国科学院资源环境科 学 与 数 据 中 心（ https://www.nesdc.org.cn）；NDVI）来源于中国科学院资源环境科 学 与 数 据 中 心（ https://www.nesdc.org.cn）",
+      "created_at": "2026-10-23T01:12:22"
+    },
+    {
+      "id": "Paper_doc001",
+      "class": "Paper",
+      "attributes": {
+        "title": "典型草原净初级生产力对气候变化响应的模拟",
+        "year": 2016
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc001_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "生物量/AGB",
+        "provider": "cern",
+        "temporal_resolution": "月",
+        "spatial_resolution": "站点尺度",
+        "period": "2016"
+      },
+      "source": "backfill",
+      "evidence": "来源于国家生态系统观测研 究 网 络 （CERN） 中 心；土壤和植被数据来源于全国第二次土壤普查 内蒙古土种志",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc001_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "GPP/NPP(生产力)",
+        "provider": "cern",
+        "temporal_resolution": "年",
+        "spatial_resolution": "站点尺度",
+        "period": "2016"
+      },
+      "source": "backfill",
+      "evidence": "内蒙古锡林浩特典型草原 ANPP的实验数据1998－2013年来源于国家生态系统观测研 究 网 络 （CERN） 中 心",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_doc003",
+      "class": "Paper",
+      "attributes": {
+        "title": "中国典型生态系统gpp的季节变异及其影响要素_姜鹏",
+        "year": 2022
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc003_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "GPP/NPP(生产力)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "6 个通量站数据来源于国家生态科学数据中心（http://www.cnern.org.cn/）",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc003_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc003_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc003_3",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土壤水分/SWC",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc003_4",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土壤温度",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc003_5",
+      "class": "Dataset",
+      "attributes": {
+        "name": "相对湿度/水汽压",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc003_6",
+      "class": "Dataset",
+      "attributes": {
+        "name": "日照/辐射",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc003_7",
+      "class": "Dataset",
+      "attributes": {
+        "name": "日照/辐射",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc003_8",
+      "class": "Dataset",
+      "attributes": {
+        "name": "日照/辐射",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc003_9",
+      "class": "Dataset",
+      "attributes": {
+        "name": "叶面积指数LAI",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "本研究使用的叶面积指数（leaf area index，LAI）数据来源于美国国家航空航天局（NASA）开发的MODIS LAI产品",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc003_10",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土壤有机碳/有机质",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "表中土壤有机质质量分数均为0—10 cm土壤深度的测定值，其中长白山站和鼎湖山站数据来自于基于长期观测和同化的中国典型森林生态系统碳循环研究参照数据集（http://www.cnern.org.cn/data/meta?id=142318）",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_doc004",
+      "class": "Paper",
+      "attributes": {
+        "title": "新疆农田和荒漠生态系统土壤有机碳储量及其影响因素",
+        "year": 2024
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc004_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "cnern",
+        "temporal_resolution": "年",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc004_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "年",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc004_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土壤水分/SWC",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc004_3",
+      "class": "Dataset",
+      "attributes": {
+        "name": "灌溉/施肥/田间管理",
+        "provider": "cnern",
+        "temporal_resolution": "年",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc004_4",
+      "class": "Dataset",
+      "attributes": {
+        "name": "灌溉/施肥/田间管理",
+        "provider": "cnern",
+        "temporal_resolution": "年",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc004_5",
+      "class": "Dataset",
+      "attributes": {
+        "name": "生物量/AGB",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc004_6",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土壤有机碳/有机质",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2024"
+      },
+      "source": "backfill",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_doc005",
+      "class": "Paper",
+      "attributes": {
+        "title": "北京东灵山森林木本植物物候对气温响应的季节差异_于海英",
+        "year": 2003
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc005_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "植被物候",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2003"
+      },
+      "source": "backfill",
+      "evidence": "物候资料为 2003—2019 年的萌芽期、展叶始期、始花期、盛花期、叶变色期和落叶期数据, 来源于国家生态科学数据中心；物候资料为 2003—2019 年的萌芽期、展叶始期、始花期、盛花期、叶变色期和落叶期数据, 来源于国家生态科学数据中心",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc005_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "cnern",
+        "temporal_resolution": "日",
+        "spatial_resolution": "站点尺度",
+        "period": "2003"
+      },
+      "source": "backfill",
+      "evidence": "气象数据采用 2002—2019 年北京站和 1970—2020 年河北省怀来县气象站的日平均气温数据",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_doc006",
+      "class": "Paper",
+      "attributes": {
+        "title": "土壤碳氮特征沿干旱梯度时空格局及对气候变化的响应——基于中国生态系统研究网络(CERN)长期定位监测数据_赵玮",
+        "year": 2023
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc006_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "气候数据来源于对应站点气象观测场，包括生长季( 4 月至 9 月) 的温度和降水数据；气候数据来源于对应站点气象观测场，包括生长季( 4 月至 9 月) 的温度和降水数据；气候数据来源于对应站点气象观测场，包括生长季( 4 月至 9 月) 的温度和降水数据；气候数据来源于对应站点气象观测场，包括生长季( 4 月至 9 月) 的温度和降水数据；1982—2015 年，6 个站点平均干旱指数分别为 0．0662( CLD) 0．2169( FKD) 0．1485( LZD) 0．2141( SPD) 0．4173( ESD) 和0．4207( NMD)",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_doc007",
+      "class": "Paper",
+      "attributes": {
+        "title": "noah-mp陆面过程模式对西双版纳热带雨林下垫面碳水热通量的模拟评估_杨启东",
+        "year": 2021
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc007_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2021"
+      },
+      "source": "backfill",
+      "evidence": "本研究使用了2003年1月1日至2010年12月31日间西双版纳站近地层观测数据；表1西双版纳站气温，降水，风速，相对湿度，净辐射，感热通量，潜热通量及NEE的年平均值；月平均降水差异明显[图1(b)]，雨季(5-10月)降水约占全年降水的80%以上；表1西双版纳站气温，降水，风速，相对湿度，净辐射，感热通量，潜热通量及NEE的年平均值；不同季节相差近4倍，其次是气温，风速和潜热通量以及NEE，不同季节相差近40%；感热通量(SHF)，潜热通量(LHF），净辐射(Rn)及生态系统与大气间净CO交换(NEE)的月平均值；土壤湿度对蒸散发和光合作用限制较小，NOAH方案模拟的土壤湿度限制因子最小",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc007_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "碳水热通量",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2021"
+      },
+      "source": "backfill",
+      "evidence": "碳水热通量观测均是利用涡度相关法直接测定，并由中国通量观测研究联盟完成标准化的质量控制和数据处理；感热通量(SHF)，潜热通量(LHF），净辐射(Rn)及生态系统与大气间净CO交换(NEE)的月平均值",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc007_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "古环境/地质资料",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2021"
+      },
+      "source": "backfill",
+      "evidence": "本研究使用了2003年1月1日至2010年12月31日间西双版纳站近地层观测数据",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_doc008",
+      "class": "Paper",
+      "attributes": {
+        "title": "基于FORCCHN模型的中国典型森林生态系统碳通量模拟",
+        "year": 2022
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "相对湿度/水汽压",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_3",
+      "class": "Dataset",
+      "attributes": {
+        "name": "风速/风向",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_4",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气压",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_5",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土壤有机碳/有机质",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "土壤数据包括 土壤碳密度 2 土壤氮密度 2 田间持水量 萎蔫系数 土壤容重 3 砂粒含量 粉粒含量 黏粒含量",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_6",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土壤养分(氮磷钾)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "土壤数据包括 土壤碳密度 2 土壤氮密度 2 田间持水量 萎蔫系数 土壤容重 3 砂粒含量 粉粒含量 黏粒含量",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_7",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土壤物理性质(质地/容重/pH)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "土壤数据包括 土壤碳密度 2 土壤氮密度 2 田间持水量 萎蔫系数 土壤容重 3 砂粒含量 粉粒含量 黏粒含量",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_8",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土壤物理性质(质地/容重/pH)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "土壤数据包括 土壤碳密度 2 土壤氮密度 2 田间持水量 萎蔫系数 土壤容重 3 砂粒含量 粉粒含量 黏粒含量",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_9",
+      "class": "Dataset",
+      "attributes": {
+        "name": "叶面积指数LAI",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "遥感数据包括 不同森林植被类型分布图 模拟初始年的最大叶面积和最小叶面积指数 2 2",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_10",
+      "class": "Dataset",
+      "attributes": {
+        "name": "NEE(净生态系统交换)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "通量数据主要包括生态系统呼吸（ER）和生态系统净 CO交换量 生态系统总初级生产力 和生态系统净初级生产力 计算方法［22］如下",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_11",
+      "class": "Dataset",
+      "attributes": {
+        "name": "GPP/NPP(生产力)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "通量数据主要包括生态系统呼吸（ER）和生态系统净 CO交换量 生态系统总初级生产力 和生态系统净初级生产力 计算方法［22］如下",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc008_12",
+      "class": "Dataset",
+      "attributes": {
+        "name": "生态系统呼吸ER",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "通量数据主要包括生态系统呼吸（ER）和生态系统净 CO交换量 生态系统总初级生产力 和生态系统净初级生产力 计算方法［22］如下",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_doc009",
+      "class": "Paper",
+      "attributes": {
+        "title": "密度与地膜覆盖对旱塬幼龄果园中大豆综合生产力的影响",
+        "year": 2021
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc009_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "月",
+        "spatial_resolution": "站点尺度",
+        "period": "2021"
+      },
+      "source": "backfill",
+      "evidence": "月降雨量与月均温变化如图1所示, 数据来源于国家生态科学数据中心资源共享服务平台；大豆生长期间平均温度为 18.94 ℃(2018 年)和 18.28 ℃(2019年)",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc009_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "数据来源(cnern网站",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2021"
+      },
+      "source": "backfill",
+      "evidence": "(http://www.cnern.org.cn/data/initDRsearch)",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_doc010",
+      "class": "Paper",
+      "attributes": {
+        "title": "高寒草甸草原净初级生产力对气候变化响应的模拟",
+        "year": 2018
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc010_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "cern",
+        "temporal_resolution": "月",
+        "spatial_resolution": "站点尺度",
+        "period": "2018"
+      },
+      "source": "backfill",
+      "evidence": "海北高寒草甸草原的1957－2014年气象数据来源于中国气象科学数据共享网（http： ／／data．cma．cn） ，青海省海北藏族自治州门源县气象观测站 ， 主要包括月降水量、 月平均最高气温、 月平均最低气温、 月平均气温",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc010_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cern",
+        "temporal_resolution": "月",
+        "spatial_resolution": "站点尺度",
+        "period": "2018"
+      },
+      "source": "backfill",
+      "evidence": "海北高寒草甸草原的1957－2014年气象数据来源于中国气象科学数据共享网（http： ／／data．cma．cn） ，青海省海北藏族自治州门源县气象观测站 ， 主要包括月降水量、 月平均最高气温、 月平均最低气温、 月平均气温",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc010_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "生物量/AGB",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2018"
+      },
+      "source": "backfill",
+      "evidence": "1998－2014年地上 生 物 量 ANPP监测数据来源于国家生态系统观测研究网络 （CERN） 中 心 （http： ／／wwwcnern．org．cn） ，地上生物量是海北站矮嵩草草甸8月底地上生物量鲜重和干重",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc010_3",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气候情景/再分析产品",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2018"
+      },
+      "source": "backfill",
+      "evidence": "本研究采 用 了 5 个 大 气 环 流 模 型 （HadGEM2－ES， GFDL－ESM2M，IPSL－CM5A－LR， MIROC－ESM－CHEM 和NorESM1－M）在两种RCP情景下输出的气候数据",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_doc011",
+      "class": "Paper",
+      "attributes": {
+        "title": "青藏高原草地地上生物量的ANNs模拟分析",
+        "year": 2022
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc011_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "生物量/AGB",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2022"
+      },
+      "source": "backfill",
+      "evidence": "AGB观测资料包括从文献［34－42］ 中和国家生态科学数据中心（海北站，www．cnern．org．cn）搜集的224个AGB实测值；草 地 类 型 AM， AS，TDS，TMS，TSM，TAS，TGM 和 STGC的根冠比分别为 3．09，3．18，6．4，5．2，3．5，5．6，3．5 和3．5",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_doc012",
+      "class": "Paper",
+      "attributes": {
+        "title": "青藏高原草地产量与草畜平衡变化",
+        "year": 2000
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc012_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "叶面积指数LAI",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2000"
+      },
+      "source": "backfill",
+      "evidence": "遥感数据采用 MODIS8d 合成 LAI 产品( MOD15A2) ( 2000—2018 年，1km) ( https: / / modis． gsfc． nasa． gov / ) 和 GLASS LAI( 1982—2018 年，5 km) ( https: / /glass-product． bnu．edu．cn /)",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc012_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气象要素/综合观测",
+        "provider": "cnern",
+        "temporal_resolution": "日",
+        "spatial_resolution": "站点尺度",
+        "period": "2000"
+      },
+      "source": "backfill",
+      "evidence": "采用 GIDS 对研究区及周边 315 个气象站的逐日数据进行空间插值",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc012_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "GPP/NPP(生产力)",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2000"
+      },
+      "source": "backfill",
+      "evidence": "利用海北( 37°36' N，101°20' E，海拔 3160 m)和当雄( 30°51' N，91°05' E，海拔 4333 m) 的通量观测数据( http: / /www．cnern．org．cn /data) 对总初级生产力( GPP) 模拟值进行验证",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_doc013",
+      "class": "Paper",
+      "attributes": {
+        "title": "江西省NPP估算及其与气候因子的关联分析-基于改进CASA模型",
+        "year": 2025
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc013_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "cern",
+        "temporal_resolution": "月",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "选取月最大温度、最小温度、辐射数据、降水量数据,用于计算实际光能利用率",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc013_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "选取月最大温度、最小温度、辐射数据、降水量数据,用于计算实际光能利用率",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc013_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "日照/辐射",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "选取月最大温度、最小温度、辐射数据、降水量数据,用于计算实际光能利用率",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc013_3",
+      "class": "Dataset",
+      "attributes": {
+        "name": "生物量/AGB",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "本研究所使用的实测数据主要来源于中国生态系统研究网络(CERN)的地面站点生物量样本数据",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc013_4",
+      "class": "Dataset",
+      "attributes": {
+        "name": "GPP/NPP(生产力)",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "本研究所使用的实测数据主要来源于中国生态系统研究网络(CERN)的地面站点生物量样本数据,是通过在江西省内特定地点直接进行生物量测定获得的,根据总初级生产力(GPP)与NPP成比例(0.47)的数据关系换算得到样本的植被NPP",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc013_5",
+      "class": "Dataset",
+      "attributes": {
+        "name": "遥感影像/反射率产品",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "实验使用(通过8d合成)MOD09GA和MYD09GA(空间分辨率500m)的近红外波段、红波段、短波红外地表反射率数据",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc013_6",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土地利用/覆被数据",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "MCD12Q1土地覆盖数据(空间分辨率500m)用于确定不同植被类型分布",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc013_7",
+      "class": "Dataset",
+      "attributes": {
+        "name": "高程/DEM",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "DEM数据中STRM-V4(空间分辨率90m)和Copernicus DEM(空间分辨率30m)用于计算辐射数据",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc013_8",
+      "class": "Dataset",
+      "attributes": {
+        "name": "行政边界/道路",
+        "provider": "cern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "江西省级行政区划边界数据来源于资源环境科学数据注册与出版系统",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_doc015",
+      "class": "Paper",
+      "attributes": {
+        "title": "基于VIP模型评估不同全局敏感性分析方法有效性及效率_何力鸿",
+        "year": 2020
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc015_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "降水量",
+        "provider": "cnern",
+        "temporal_resolution": "日",
+        "spatial_resolution": "站点尺度",
+        "period": "2020"
+      },
+      "source": "backfill",
+      "evidence": "封丘，禹城和栾城站日尺度气象数据从国家生态科学数据中心[21]获得。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_doc015_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "灌溉/施肥/田间管理",
+        "provider": "cnern",
+        "temporal_resolution": "日",
+        "spatial_resolution": "站点尺度",
+        "period": "2020"
+      },
+      "source": "backfill",
+      "evidence": "涉及的作物参数主要有：有效积温参数、作物不同时期含氮量；；封丘、禹城和栾城农业生态站田间管理措施数据从文献资料[24-25]和国家生态科学数据中心[21]获得。；表 2 中列出了播种日期，收获日期，氮肥和灌溉的详细信息。；表 2 中列出了播种日期，收获日期，氮肥和灌溉的详细信息。；表 2 中列出了播种日期，收获日期，氮肥和灌溉的详细信息。；表 2 中列出了播种日期，收获日期，氮肥和灌溉的详细信息。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_ndoc001",
+      "class": "Paper",
+      "attributes": {
+        "title": "基于改进S-G滤波和非监督分类局部核回归的中国LAI时序数据融合研究_谢昭颖",
+        "year": 2014
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc001_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "叶面积指数LAI",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2014"
+      },
+      "source": "backfill",
+      "evidence": "研究采用的MODIS LAI为MCD15A2H第6版本数据集和MOD15A2H第6版本数据集，前者由Terra和Aqua的采集数据组合生成，后者则源自Terra星。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc001_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土地利用/覆被数据",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2014"
+      },
+      "source": "backfill",
+      "evidence": "研究所采用的土地覆盖数据为MCD12Q1产品，由每年Terra和Aqua观测所得的数据经监督决策树分类处理所得。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc001_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "植被指数NDVI/EVI",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2014"
+      },
+      "source": "backfill",
+      "evidence": "产品的反演算法除了采用三维辐射传输模型算法模拟生成查找表的主算法外，还根据不同植被类型建立LAI与归一化植被指数（NDVI）的经验回归方程来构建备用算法。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc001_3",
+      "class": "Dataset",
+      "attributes": {
+        "name": "生物监测/观测样地",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2014"
+      },
+      "source": "backfill",
+      "evidence": "本文的数据来源于国家科技基础条件平台-国家生态科学数据中心(http://www.nesdc.org.cn)、江西鹰潭农田生态系统国家野外科学观测研究站（http://ww.yingtan.cerm.ac.cn）。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_ndoc002",
+      "class": "Paper",
+      "attributes": {
+        "title": "基于时空融合技术的高精度遥感蒸散计算_戴肖杰",
+        "year": 2023
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc002_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "nesdc",
+        "temporal_resolution": "日",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "气象数据均下载于中国气象数据网( : ) ，选取研究区垦利站的日气温、气压、风速等气象要素，作为 模型的输入参数。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc002_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气压",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "气象数据均下载于中国气象数据网( : ) ，选取研究区垦利站的日气温、气压、风速等气象要素，作为 模型的输入参数。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc002_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "风速/风向",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "气象数据均下载于中国气象数据网( : ) ，选取研究区垦利站的日气温、气压、风速等气象要素，作为 模型的输入参数。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc002_3",
+      "class": "Dataset",
+      "attributes": {
+        "name": "碳水热通量",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "通量站验证数据来源于国家生态科学数据中心( :      ) ，山东禹城农田生态系统国家野外科学观测研究站的通量数据产品是利用 技术体系进行标准化的质量控制和数据处理后的通量日值数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc002_4",
+      "class": "Dataset",
+      "attributes": {
+        "name": "遥感影像/反射率产品",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "数据来源于美国地质调查局网站 ( :     ) ， 传 感 器 包 括 了传感器所有的波段，并对波段进行了重新调整，能够更好地避免大气吸收特征， 的第波段空间分辨率为 ，第   波段为热红外波段，空间分辨率为  ，回访周期均为  。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc002_5",
+      "class": "Dataset",
+      "attributes": {
+        "name": "地表温度LST",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "数据是 地表温度产品，空间分辨率为 ，时间分辨率为 。 、数据均来源于美国航天局网站( :urs.earthdata.nasa.gov/）。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc002_6",
+      "class": "Dataset",
+      "attributes": {
+        "name": "遥感影像/反射率产品",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": " 产品提供了  个波段的地表反射率，空间分辨率为 ，回访周期为 。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc002_7",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土地利用/覆被数据",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2023"
+      },
+      "source": "backfill",
+      "evidence": "在参考研究区已有土地利用类型图的基础上，根据黄河三角洲 年一期 遥感影像，按照自然资源部土地分类标准分类并制作了研究区的土地利用现状图，如图  所示，主要包括林地、水体、滩涂、农田、芦苇沼泽和 建 设 用 地  种土地利用类型。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_ndoc004",
+      "class": "Paper",
+      "attributes": {
+        "title": "CLM5-FATES模式对中国长白山针阔混交林分布的模拟",
+        "year": 2025
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc004_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "群落/物种多样性",
+        "provider": "nesdc",
+        "temporal_resolution": "年",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "为了验证 CLM5‐FATES 模式在长白山阔叶红松林永久样地的针阔混交林的参数敏感性，笔者使用了《2003-2008 年吉林长白山站植物群落 种 类 组 成 与 物 质 生 产 观 测 数 据 》中 2005 年 阔 叶 红 松 林 综 合 观 测 场 乔木 层 植 物 种 组 成 数 据（韩 士 杰，2012）.",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc004_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土地利用/覆被数据",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "为了评估 CLM5‐FATES 模式对长白山地区针阔混交林的模拟效果，使用了中山大学全球变化与陆地生态系统模型研究团队的中国土地利用覆盖和 变 化 数 据 集.",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc004_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气象要素/综合观测",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "GSWP3v1（Global Soil Wetness Project phase 3version 1）的 1991 年 至 2010 年 的 气 象 数 据.",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc004_3",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气象要素/综合观测",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "还 使 用 了 CRUNCEPv7（Climatic Research Unit National Centers for Environmental Prediction ver‐sion 7）中 1991 年 至 2010 年 的 气 象 数 据.",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "Paper_ndoc007",
+      "class": "Paper",
+      "attributes": {
+        "title": "华北平原冬小麦——夏玉米轮作区DLM与CLM5模型模拟对比研究_王菲",
+        "year": null
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc007_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气温/温度",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc007_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "降水量",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc007_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "相对湿度/水汽压",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc007_3",
+      "class": "Dataset",
+      "attributes": {
+        "name": "风速/风向",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc007_4",
+      "class": "Dataset",
+      "attributes": {
+        "name": "气压",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc007_5",
+      "class": "Dataset",
+      "attributes": {
+        "name": "日照/辐射",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc007_6",
+      "class": "Dataset",
+      "attributes": {
+        "name": "叶面积指数LAI",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "农田数据包含作物物候记录(用于模型播种时间、收获时间和种植时长等参数的设定)、叶面积指数(leaf area index, LAI)和作物产量数据(用于模型模拟结果的验证)。",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "id": "DS_ndoc007_7",
+      "class": "Dataset",
+      "attributes": {
+        "name": "作物物候/种植结构",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "农田数据包含作物物候记录(用于模型播种时间、收获时间和种植时长等参数的设定)、叶面积指数(leaf area index, LAI)和作物产量数据(用于模型模拟结果的验证)。",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc007_8",
+      "class": "Dataset",
+      "attributes": {
+        "name": "作物产量/产值",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "农田数据包含作物物候记录(用于模型播种时间、收获时间和种植时长等参数的设定)、叶面积指数(leaf area index, LAI)和作物产量数据(用于模型模拟结果的验证)。",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc007_9",
+      "class": "Dataset",
+      "attributes": {
+        "name": "GPP/NPP(生产力)",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "通量数据的时间分辨率为0.5 h，包含碳通量——生态系统总初级生产力(gross primary production，GPP)和热通量——潜热通量(latent heat flux, LE)。",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc007_10",
+      "class": "Dataset",
+      "attributes": {
+        "name": "碳水热通量",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "站点尺度",
+        "period": "unknown"
+      },
+      "source": "backfill",
+      "evidence": "通量数据的时间分辨率为0.5 h，包含碳通量——生态系统总初级生产力(gross primary production，GPP)和热通量——潜热通量(latent heat flux, LE)。",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Paper_ndoc009",
+      "class": "Paper",
+      "attributes": {
+        "title": "西南地区水陆耦合的生态安全格局识别与生态韧性评估优化_程佳龙",
+        "year": 2025
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc009_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "蒸散发/ET",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "地表蒸散发数据（2015年、1000m）来源于国家生态系统观测研究网络科技资源服务系统",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc009_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土壤类型/属性",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "土壤数据（2020年、100m）、土地利用数据（2020年、30m）来源于中国科学院资源环境科学与数据中心",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc009_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "行政边界/道路",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "土壤数据（2020年、100m）、土地利用数据（2020年、30m）来源于中国科学院资源环境科学与数据中心；道路数据（2020年）、水系数据（2020年）来源于 Open Street Map；行政区划数据（2020 年）来源于国家地理信息公共服务平台",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc009_3",
+      "class": "Dataset",
+      "attributes": {
+        "name": "植被指数NDVI/EVI",
+        "provider": "cnern",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "归一化植被指数（2020 年、30 m）来源于国家生态科学数据中心",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Paper_ndoc011",
+      "class": "Paper",
+      "attributes": {
+        "title": "气候变化背景下三江源国家公园四种野生有蹄类动物栖息地适宜性分析",
+        "year": 2050
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc011_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "植被指数NDVI/EVI",
+        "provider": "nesdc",
+        "temporal_resolution": "年",
+        "spatial_resolution": "unknown",
+        "period": "2050"
+      },
+      "source": "backfill",
+      "evidence": "网络下载数据主要来自全球生物多样性信息网 络 平 台 (https://www. gbif. org/, GBIF)、 iDigBio数据库 (https://www. idigbio. org/) 和国家青藏高原科学数据中心；其中 NDVI 来 自 2000—2022 年 中 国 30 m 年 最 大 NDVI 数 据 集 (https://www. nesdc. org. cn/)",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc011_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "径流/流量",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2050"
+      },
+      "source": "backfill",
+      "evidence": "水网 密 度 来 自 三 江 源 1∶ 25 万 水 系 数 据 集 (2015)(https://data. tpdc. ac. cn/)，通过 ArcMap 10. 8 中欧氏距离工具生成",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Paper_ndoc012",
+      "class": "Paper",
+      "attributes": {
+        "title": "广西石漠化地区“三生空间”演化及情景模拟优化_陈严武",
+        "year": 2025
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc012_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "行政边界/道路",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "本文研究数据主要有行政边界数据、土地利用数据、地形地貌数据；广西石漠化边界数据来源于国家生态数据中心资源共享服务平台西南岩溶石漠化综合治理工程边界数据集；30m土地利用数据来源于武汉大学土地利用和覆盖年度数据集(CLCD；水系数据、道路网数据来源于OSM；自然保护区数据包括国家级自然保护区和省级自然保护区矢量数据,来源于数字地球开放平台",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Paper_ndoc013",
+      "class": "Paper",
+      "attributes": {
+        "title": "皖江流域生境质量评价及多情景优化研究_吴雨桐",
+        "year": 2025
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc013_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土地利用/覆被数据",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc013_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "植被指数NDVI/EVI",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "归一化植被指数（NDVI）在国家生态科学数据中心（http://www.nesdc.org.cn/）下载",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc013_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "降水量",
+        "provider": "nesdc",
+        "temporal_resolution": "年",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心；土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc013_3",
+      "class": "Dataset",
+      "attributes": {
+        "name": "人口/GDP/社会经济",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心；土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Paper_ndoc014",
+      "class": "Paper",
+      "attributes": {
+        "title": "嘉陵江流域生态系统服务动态变化及权衡协同分析_王天雯",
+        "year": 2025
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc014_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "降水量",
+        "provider": "nesdc",
+        "temporal_resolution": "年",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "利用年降水栅格数据以及气象站站点的数据进行克里金插值确立。；利用年降水栅格数据以及气象站站点的数据进行克里金插值确立。；气温数据来自国家地球系统科学数据中心（http:/www.geodata.cn/），空间分辨率为 1 km。；降雨数据来自 NOAA（https://gis.ncdc.noaa.gov），空间分辨率为 1 km",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc014_1",
+      "class": "Dataset",
+      "attributes": {
+        "name": "植被指数NDVI/EVI",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "NDVI 数据来源于中国科学院生态科学数据中心（http://www.nesdc.org.cn/）。；人口密度、GDP 等人文经济数据来自 2000－2020 年四川省、陕西省、重庆市、甘肃省等各省市统计年鉴。",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc014_2",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土壤水分/SWC",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "包含土壤类型、土壤质地、含沙量、土壤含水量等数据。",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc014_3",
+      "class": "Dataset",
+      "attributes": {
+        "name": "土地利用/覆被数据",
+        "provider": "nesdc",
+        "temporal_resolution": "年",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "土地利用数据来源于中国科学院资源环境科学与数据中心（https://www.resdc.cn/）",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Paper_ndoc015",
+      "class": "Paper",
+      "attributes": {
+        "title": "基于四象限法的江西省南丰县耕林园置换潜力测算_闫梓旭",
+        "year": 2025
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "DS_ndoc015_0",
+      "class": "Dataset",
+      "attributes": {
+        "name": "植被指数NDVI/EVI",
+        "provider": "nesdc",
+        "temporal_resolution": "unknown",
+        "spatial_resolution": "unknown",
+        "period": "2025"
+      },
+      "source": "backfill",
+      "evidence": "NDVI）来源于中国科学院资源环境科 学 与 数 据 中 心（ https://www.nesdc.org.cn）；NDVI）来源于中国科学院资源环境科 学 与 数 据 中 心（ https://www.nesdc.org.cn）",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Geo_4ce506f9b2",
+      "class": "GeoEntity",
+      "attributes": {
+        "name": "亚热带气候区",
+        "level": "ClimateZone"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Geo_4855445492",
+      "class": "GeoEntity",
+      "attributes": {
+        "name": "温带气候区",
+        "level": "ClimateZone"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Geo_7a92fe9c6c",
+      "class": "GeoEntity",
+      "attributes": {
+        "name": "热带气候区",
+        "level": "ClimateZone"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Geo_e9ec9fa77e",
+      "class": "GeoEntity",
+      "attributes": {
+        "name": "高寒气候区",
+        "level": "ClimateZone"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_473f520599",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "内蒙古",
+        "type": "草地生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_fea43faef6",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "海北",
+        "type": "草地生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_2172d25cfd",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "长白山",
+        "type": "森林生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_807419b8f0",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "千烟洲",
+        "type": "农田生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_2e3a255990",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "鼎湖山",
+        "type": "森林生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_0ead1ffd56",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "当雄",
+        "type": "未知"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_ddf2a8de7d",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "阿克苏",
+        "type": "农田生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_c761418f5e",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "策勒",
+        "type": "荒漠生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_c3eb08f560",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "阜康",
+        "type": "荒漠生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_433ef852e7",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "临泽",
+        "type": "农田生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_a90914c732",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "奈曼",
+        "type": "荒漠生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_a60c3633a7",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "西双版纳",
+        "type": "森林生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_b22e55b004",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "长武",
+        "type": "农田生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_c289438c5f",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "拉萨",
+        "type": "农田生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_b333da676a",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "江西大岗山森林",
+        "type": "未知"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_228bd2a03e",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "鹰潭",
+        "type": "农田生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_1152023200",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "栾城",
+        "type": "农田生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_33c3819283",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "禹城",
+        "type": "农田生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_868b51b81b",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "安塞",
+        "type": "农田生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_be57fee22b",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "沈阳",
+        "type": "农田生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_b740d630c1",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "海伦",
+        "type": "农田生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_bd6ff65510",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "盐亭",
+        "type": "农田生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_18a475e70d",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "黑龙江帽儿山",
+        "type": "未知"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_603a286240",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "贡嘎山",
+        "type": "森林生态系统"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_1cd9ab5b84",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "垦利",
+        "type": "未知"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_834a5d87db",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "垦利气象",
+        "type": "未知"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_7e850eff72",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "商丘",
+        "type": "未知"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_9118c5b985",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "怀来",
+        "type": "未知"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "id": "Station_631f554532",
+      "class": "EcologicalStation",
+      "attributes": {
+        "name": "馆陶",
+        "type": "未知"
+      },
+      "source": "backfill",
+      "evidence": "",
+      "created_at": "2026-10-23T01:12:24"
+    }
+  ],
+  "relation_instances": [
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc001",
+      "object": "DS_doc001_0",
+      "evidence": "来源于国家生态系统观测研 究 网 络 （CERN） 中 心；土壤和植被数据来源于全国第二次土壤普查 内蒙古土种志",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc001",
+      "object": "DS_doc001_1",
+      "evidence": "内蒙古锡林浩特典型草原 ANPP的实验数据1998－2013年来源于国家生态系统观测研 究 网 络 （CERN） 中 心",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc003",
+      "object": "DS_doc003_0",
+      "evidence": "6 个通量站数据来源于国家生态科学数据中心（http://www.cnern.org.cn/）",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc003",
+      "object": "DS_doc003_1",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc003",
+      "object": "DS_doc003_2",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc003",
+      "object": "DS_doc003_3",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc003",
+      "object": "DS_doc003_4",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc003",
+      "object": "DS_doc003_5",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc003",
+      "object": "DS_doc003_6",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc003",
+      "object": "DS_doc003_7",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc003",
+      "object": "DS_doc003_8",
+      "evidence": "常规气象数据包含土壤含水量（CSW；5 cm 深度）、土壤温度（ts；5 cm 深度）、空气温度（ta）、空气相对湿度（Hr）、饱和水汽压差（Dvp）、光合有效净辐射（RPA）、太阳辐射（Rd）、净辐射（Rn）和降水量（P）",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc003",
+      "object": "DS_doc003_9",
+      "evidence": "本研究使用的叶面积指数（leaf area index，LAI）数据来源于美国国家航空航天局（NASA）开发的MODIS LAI产品",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc003",
+      "object": "DS_doc003_10",
+      "evidence": "表中土壤有机质质量分数均为0—10 cm土壤深度的测定值，其中长白山站和鼎湖山站数据来自于基于长期观测和同化的中国典型森林生态系统碳循环研究参照数据集（http://www.cnern.org.cn/data/meta?id=142318）",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc004",
+      "object": "DS_doc004_0",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc004",
+      "object": "DS_doc004_1",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc004",
+      "object": "DS_doc004_2",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc004",
+      "object": "DS_doc004_3",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc004",
+      "object": "DS_doc004_4",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc004",
+      "object": "DS_doc004_5",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc004",
+      "object": "DS_doc004_6",
+      "evidence": "SOC 储量、年平均气温、年平均降水量、年灌溉量、土壤含水量、年施肥量、地上生物量数据均来源于国家生态科学数据中心资源共享服务平台（www.cnem.org.cn）的CERN长期定位监测数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc005",
+      "object": "DS_doc005_0",
+      "evidence": "物候资料为 2003—2019 年的萌芽期、展叶始期、始花期、盛花期、叶变色期和落叶期数据, 来源于国家生态科学数据中心；物候资料为 2003—2019 年的萌芽期、展叶始期、始花期、盛花期、叶变色期和落叶期数据, 来源于国家生态科学数据中心",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc005",
+      "object": "DS_doc005_1",
+      "evidence": "气象数据采用 2002—2019 年北京站和 1970—2020 年河北省怀来县气象站的日平均气温数据",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc006",
+      "object": "DS_doc006_0",
+      "evidence": "气候数据来源于对应站点气象观测场，包括生长季( 4 月至 9 月) 的温度和降水数据；气候数据来源于对应站点气象观测场，包括生长季( 4 月至 9 月) 的温度和降水数据；气候数据来源于对应站点气象观测场，包括生长季( 4 月至 9 月) 的温度和降水数据；气候数据来源于对应站点气象观测场，包括生长季( 4 月至 9 月) 的温度和降水数据；1982—2015 年，6 个站点平均干旱指数分别为 0．0662( CLD) 0．2169( FKD) 0．1485( LZD) 0．2141( SPD) 0．4173( ESD) 和0．4207( NMD)",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc007",
+      "object": "DS_doc007_0",
+      "evidence": "本研究使用了2003年1月1日至2010年12月31日间西双版纳站近地层观测数据；表1西双版纳站气温，降水，风速，相对湿度，净辐射，感热通量，潜热通量及NEE的年平均值；月平均降水差异明显[图1(b)]，雨季(5-10月)降水约占全年降水的80%以上；表1西双版纳站气温，降水，风速，相对湿度，净辐射，感热通量，潜热通量及NEE的年平均值；不同季节相差近4倍，其次是气温，风速和潜热通量以及NEE，不同季节相差近40%；感热通量(SHF)，潜热通量(LHF），净辐射(Rn)及生态系统与大气间净CO交换(NEE)的月平均值；土壤湿度对蒸散发和光合作用限制较小，NOAH方案模拟的土壤湿度限制因子最小",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc007",
+      "object": "DS_doc007_1",
+      "evidence": "碳水热通量观测均是利用涡度相关法直接测定，并由中国通量观测研究联盟完成标准化的质量控制和数据处理；感热通量(SHF)，潜热通量(LHF），净辐射(Rn)及生态系统与大气间净CO交换(NEE)的月平均值",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc007",
+      "object": "DS_doc007_2",
+      "evidence": "本研究使用了2003年1月1日至2010年12月31日间西双版纳站近地层观测数据",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_0",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_1",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_2",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_3",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_4",
+      "evidence": "模型所需每日气象数据包括 太阳总辐射 2 平均气温 最高气温 最低气温 降水量 空气相对湿度平均风速 平均气压",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_5",
+      "evidence": "土壤数据包括 土壤碳密度 2 土壤氮密度 2 田间持水量 萎蔫系数 土壤容重 3 砂粒含量 粉粒含量 黏粒含量",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_6",
+      "evidence": "土壤数据包括 土壤碳密度 2 土壤氮密度 2 田间持水量 萎蔫系数 土壤容重 3 砂粒含量 粉粒含量 黏粒含量",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_7",
+      "evidence": "土壤数据包括 土壤碳密度 2 土壤氮密度 2 田间持水量 萎蔫系数 土壤容重 3 砂粒含量 粉粒含量 黏粒含量",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_8",
+      "evidence": "土壤数据包括 土壤碳密度 2 土壤氮密度 2 田间持水量 萎蔫系数 土壤容重 3 砂粒含量 粉粒含量 黏粒含量",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_9",
+      "evidence": "遥感数据包括 不同森林植被类型分布图 模拟初始年的最大叶面积和最小叶面积指数 2 2",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_10",
+      "evidence": "通量数据主要包括生态系统呼吸（ER）和生态系统净 CO交换量 生态系统总初级生产力 和生态系统净初级生产力 计算方法［22］如下",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_11",
+      "evidence": "通量数据主要包括生态系统呼吸（ER）和生态系统净 CO交换量 生态系统总初级生产力 和生态系统净初级生产力 计算方法［22］如下",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc008",
+      "object": "DS_doc008_12",
+      "evidence": "通量数据主要包括生态系统呼吸（ER）和生态系统净 CO交换量 生态系统总初级生产力 和生态系统净初级生产力 计算方法［22］如下",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc009",
+      "object": "DS_doc009_0",
+      "evidence": "月降雨量与月均温变化如图1所示, 数据来源于国家生态科学数据中心资源共享服务平台；大豆生长期间平均温度为 18.94 ℃(2018 年)和 18.28 ℃(2019年)",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc009",
+      "object": "DS_doc009_1",
+      "evidence": "(http://www.cnern.org.cn/data/initDRsearch)",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc010",
+      "object": "DS_doc010_0",
+      "evidence": "海北高寒草甸草原的1957－2014年气象数据来源于中国气象科学数据共享网（http： ／／data．cma．cn） ，青海省海北藏族自治州门源县气象观测站 ， 主要包括月降水量、 月平均最高气温、 月平均最低气温、 月平均气温",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc010",
+      "object": "DS_doc010_1",
+      "evidence": "海北高寒草甸草原的1957－2014年气象数据来源于中国气象科学数据共享网（http： ／／data．cma．cn） ，青海省海北藏族自治州门源县气象观测站 ， 主要包括月降水量、 月平均最高气温、 月平均最低气温、 月平均气温",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc010",
+      "object": "DS_doc010_2",
+      "evidence": "1998－2014年地上 生 物 量 ANPP监测数据来源于国家生态系统观测研究网络 （CERN） 中 心 （http： ／／wwwcnern．org．cn） ，地上生物量是海北站矮嵩草草甸8月底地上生物量鲜重和干重",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc010",
+      "object": "DS_doc010_3",
+      "evidence": "本研究采 用 了 5 个 大 气 环 流 模 型 （HadGEM2－ES， GFDL－ESM2M，IPSL－CM5A－LR， MIROC－ESM－CHEM 和NorESM1－M）在两种RCP情景下输出的气候数据",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc011",
+      "object": "DS_doc011_0",
+      "evidence": "AGB观测资料包括从文献［34－42］ 中和国家生态科学数据中心（海北站，www．cnern．org．cn）搜集的224个AGB实测值；草 地 类 型 AM， AS，TDS，TMS，TSM，TAS，TGM 和 STGC的根冠比分别为 3．09，3．18，6．4，5．2，3．5，5．6，3．5 和3．5",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc012",
+      "object": "DS_doc012_0",
+      "evidence": "遥感数据采用 MODIS8d 合成 LAI 产品( MOD15A2) ( 2000—2018 年，1km) ( https: / / modis． gsfc． nasa． gov / ) 和 GLASS LAI( 1982—2018 年，5 km) ( https: / /glass-product． bnu．edu．cn /)",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc012",
+      "object": "DS_doc012_1",
+      "evidence": "采用 GIDS 对研究区及周边 315 个气象站的逐日数据进行空间插值",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc012",
+      "object": "DS_doc012_2",
+      "evidence": "利用海北( 37°36' N，101°20' E，海拔 3160 m)和当雄( 30°51' N，91°05' E，海拔 4333 m) 的通量观测数据( http: / /www．cnern．org．cn /data) 对总初级生产力( GPP) 模拟值进行验证",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc013",
+      "object": "DS_doc013_0",
+      "evidence": "选取月最大温度、最小温度、辐射数据、降水量数据,用于计算实际光能利用率",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc013",
+      "object": "DS_doc013_1",
+      "evidence": "选取月最大温度、最小温度、辐射数据、降水量数据,用于计算实际光能利用率",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc013",
+      "object": "DS_doc013_2",
+      "evidence": "选取月最大温度、最小温度、辐射数据、降水量数据,用于计算实际光能利用率",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc013",
+      "object": "DS_doc013_3",
+      "evidence": "本研究所使用的实测数据主要来源于中国生态系统研究网络(CERN)的地面站点生物量样本数据",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc013",
+      "object": "DS_doc013_4",
+      "evidence": "本研究所使用的实测数据主要来源于中国生态系统研究网络(CERN)的地面站点生物量样本数据,是通过在江西省内特定地点直接进行生物量测定获得的,根据总初级生产力(GPP)与NPP成比例(0.47)的数据关系换算得到样本的植被NPP",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc013",
+      "object": "DS_doc013_5",
+      "evidence": "实验使用(通过8d合成)MOD09GA和MYD09GA(空间分辨率500m)的近红外波段、红波段、短波红外地表反射率数据",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc013",
+      "object": "DS_doc013_6",
+      "evidence": "MCD12Q1土地覆盖数据(空间分辨率500m)用于确定不同植被类型分布",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc013",
+      "object": "DS_doc013_7",
+      "evidence": "DEM数据中STRM-V4(空间分辨率90m)和Copernicus DEM(空间分辨率30m)用于计算辐射数据",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc013",
+      "object": "DS_doc013_8",
+      "evidence": "江西省级行政区划边界数据来源于资源环境科学数据注册与出版系统",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc015",
+      "object": "DS_doc015_0",
+      "evidence": "封丘，禹城和栾城站日尺度气象数据从国家生态科学数据中心[21]获得。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。；气象数据包括最大温度、最小温度、平均温度、降水量、日照时数、相对湿度、风速。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_doc015",
+      "object": "DS_doc015_1",
+      "evidence": "涉及的作物参数主要有：有效积温参数、作物不同时期含氮量；；封丘、禹城和栾城农业生态站田间管理措施数据从文献资料[24-25]和国家生态科学数据中心[21]获得。；表 2 中列出了播种日期，收获日期，氮肥和灌溉的详细信息。；表 2 中列出了播种日期，收获日期，氮肥和灌溉的详细信息。；表 2 中列出了播种日期，收获日期，氮肥和灌溉的详细信息。；表 2 中列出了播种日期，收获日期，氮肥和灌溉的详细信息。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc001",
+      "object": "DS_ndoc001_0",
+      "evidence": "研究采用的MODIS LAI为MCD15A2H第6版本数据集和MOD15A2H第6版本数据集，前者由Terra和Aqua的采集数据组合生成，后者则源自Terra星。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc001",
+      "object": "DS_ndoc001_1",
+      "evidence": "研究所采用的土地覆盖数据为MCD12Q1产品，由每年Terra和Aqua观测所得的数据经监督决策树分类处理所得。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc001",
+      "object": "DS_ndoc001_2",
+      "evidence": "产品的反演算法除了采用三维辐射传输模型算法模拟生成查找表的主算法外，还根据不同植被类型建立LAI与归一化植被指数（NDVI）的经验回归方程来构建备用算法。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc001",
+      "object": "DS_ndoc001_3",
+      "evidence": "本文的数据来源于国家科技基础条件平台-国家生态科学数据中心(http://www.nesdc.org.cn)、江西鹰潭农田生态系统国家野外科学观测研究站（http://ww.yingtan.cerm.ac.cn）。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc002",
+      "object": "DS_ndoc002_0",
+      "evidence": "气象数据均下载于中国气象数据网( : ) ，选取研究区垦利站的日气温、气压、风速等气象要素，作为 模型的输入参数。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc002",
+      "object": "DS_ndoc002_1",
+      "evidence": "气象数据均下载于中国气象数据网( : ) ，选取研究区垦利站的日气温、气压、风速等气象要素，作为 模型的输入参数。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc002",
+      "object": "DS_ndoc002_2",
+      "evidence": "气象数据均下载于中国气象数据网( : ) ，选取研究区垦利站的日气温、气压、风速等气象要素，作为 模型的输入参数。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc002",
+      "object": "DS_ndoc002_3",
+      "evidence": "通量站验证数据来源于国家生态科学数据中心( :      ) ，山东禹城农田生态系统国家野外科学观测研究站的通量数据产品是利用 技术体系进行标准化的质量控制和数据处理后的通量日值数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc002",
+      "object": "DS_ndoc002_4",
+      "evidence": "数据来源于美国地质调查局网站 ( :     ) ， 传 感 器 包 括 了传感器所有的波段，并对波段进行了重新调整，能够更好地避免大气吸收特征， 的第波段空间分辨率为 ，第   波段为热红外波段，空间分辨率为  ，回访周期均为  。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc002",
+      "object": "DS_ndoc002_5",
+      "evidence": "数据是 地表温度产品，空间分辨率为 ，时间分辨率为 。 、数据均来源于美国航天局网站( :urs.earthdata.nasa.gov/）。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc002",
+      "object": "DS_ndoc002_6",
+      "evidence": " 产品提供了  个波段的地表反射率，空间分辨率为 ，回访周期为 。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc002",
+      "object": "DS_ndoc002_7",
+      "evidence": "在参考研究区已有土地利用类型图的基础上，根据黄河三角洲 年一期 遥感影像，按照自然资源部土地分类标准分类并制作了研究区的土地利用现状图，如图  所示，主要包括林地、水体、滩涂、农田、芦苇沼泽和 建 设 用 地  种土地利用类型。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc004",
+      "object": "DS_ndoc004_0",
+      "evidence": "为了验证 CLM5‐FATES 模式在长白山阔叶红松林永久样地的针阔混交林的参数敏感性，笔者使用了《2003-2008 年吉林长白山站植物群落 种 类 组 成 与 物 质 生 产 观 测 数 据 》中 2005 年 阔 叶 红 松 林 综 合 观 测 场 乔木 层 植 物 种 组 成 数 据（韩 士 杰，2012）.",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc004",
+      "object": "DS_ndoc004_1",
+      "evidence": "为了评估 CLM5‐FATES 模式对长白山地区针阔混交林的模拟效果，使用了中山大学全球变化与陆地生态系统模型研究团队的中国土地利用覆盖和 变 化 数 据 集.",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc004",
+      "object": "DS_ndoc004_2",
+      "evidence": "GSWP3v1（Global Soil Wetness Project phase 3version 1）的 1991 年 至 2010 年 的 气 象 数 据.",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc004",
+      "object": "DS_ndoc004_3",
+      "evidence": "还 使 用 了 CRUNCEPv7（Climatic Research Unit National Centers for Environmental Prediction ver‐sion 7）中 1991 年 至 2010 年 的 气 象 数 据.",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc007",
+      "object": "DS_ndoc007_0",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc007",
+      "object": "DS_ndoc007_1",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc007",
+      "object": "DS_ndoc007_2",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc007",
+      "object": "DS_ndoc007_3",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc007",
+      "object": "DS_ndoc007_4",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc007",
+      "object": "DS_ndoc007_5",
+      "evidence": "气象数据的时间分辨率为0.5 h，包括气温、短波辐射、降水、相对湿度、风速和大气压等，为驱动模型的大气强迫场数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:23"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc007",
+      "object": "DS_ndoc007_6",
+      "evidence": "农田数据包含作物物候记录(用于模型播种时间、收获时间和种植时长等参数的设定)、叶面积指数(leaf area index, LAI)和作物产量数据(用于模型模拟结果的验证)。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc007",
+      "object": "DS_ndoc007_7",
+      "evidence": "农田数据包含作物物候记录(用于模型播种时间、收获时间和种植时长等参数的设定)、叶面积指数(leaf area index, LAI)和作物产量数据(用于模型模拟结果的验证)。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc007",
+      "object": "DS_ndoc007_8",
+      "evidence": "农田数据包含作物物候记录(用于模型播种时间、收获时间和种植时长等参数的设定)、叶面积指数(leaf area index, LAI)和作物产量数据(用于模型模拟结果的验证)。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc007",
+      "object": "DS_ndoc007_9",
+      "evidence": "通量数据的时间分辨率为0.5 h，包含碳通量——生态系统总初级生产力(gross primary production，GPP)和热通量——潜热通量(latent heat flux, LE)。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc007",
+      "object": "DS_ndoc007_10",
+      "evidence": "通量数据的时间分辨率为0.5 h，包含碳通量——生态系统总初级生产力(gross primary production，GPP)和热通量——潜热通量(latent heat flux, LE)。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc009",
+      "object": "DS_ndoc009_0",
+      "evidence": "地表蒸散发数据（2015年、1000m）来源于国家生态系统观测研究网络科技资源服务系统",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc009",
+      "object": "DS_ndoc009_1",
+      "evidence": "土壤数据（2020年、100m）、土地利用数据（2020年、30m）来源于中国科学院资源环境科学与数据中心",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc009",
+      "object": "DS_ndoc009_2",
+      "evidence": "土壤数据（2020年、100m）、土地利用数据（2020年、30m）来源于中国科学院资源环境科学与数据中心；道路数据（2020年）、水系数据（2020年）来源于 Open Street Map；行政区划数据（2020 年）来源于国家地理信息公共服务平台",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc009",
+      "object": "DS_ndoc009_3",
+      "evidence": "归一化植被指数（2020 年、30 m）来源于国家生态科学数据中心",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc011",
+      "object": "DS_ndoc011_0",
+      "evidence": "网络下载数据主要来自全球生物多样性信息网 络 平 台 (https://www. gbif. org/, GBIF)、 iDigBio数据库 (https://www. idigbio. org/) 和国家青藏高原科学数据中心；其中 NDVI 来 自 2000—2022 年 中 国 30 m 年 最 大 NDVI 数 据 集 (https://www. nesdc. org. cn/)",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc011",
+      "object": "DS_ndoc011_1",
+      "evidence": "水网 密 度 来 自 三 江 源 1∶ 25 万 水 系 数 据 集 (2015)(https://data. tpdc. ac. cn/)，通过 ArcMap 10. 8 中欧氏距离工具生成",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc012",
+      "object": "DS_ndoc012_0",
+      "evidence": "本文研究数据主要有行政边界数据、土地利用数据、地形地貌数据；广西石漠化边界数据来源于国家生态数据中心资源共享服务平台西南岩溶石漠化综合治理工程边界数据集；30m土地利用数据来源于武汉大学土地利用和覆盖年度数据集(CLCD；水系数据、道路网数据来源于OSM；自然保护区数据包括国家级自然保护区和省级自然保护区矢量数据,来源于数字地球开放平台",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc013",
+      "object": "DS_ndoc013_0",
+      "evidence": "土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc013",
+      "object": "DS_ndoc013_1",
+      "evidence": "归一化植被指数（NDVI）在国家生态科学数据中心（http://www.nesdc.org.cn/）下载",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc013",
+      "object": "DS_ndoc013_2",
+      "evidence": "土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心；土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc013",
+      "object": "DS_ndoc013_3",
+      "evidence": "土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心；土地利用数据、年均温度、年降雨量、人口密度、GDP 数据均来源于中国科学院资源环境科学数据中心",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc014",
+      "object": "DS_ndoc014_0",
+      "evidence": "利用年降水栅格数据以及气象站站点的数据进行克里金插值确立。；利用年降水栅格数据以及气象站站点的数据进行克里金插值确立。；气温数据来自国家地球系统科学数据中心（http:/www.geodata.cn/），空间分辨率为 1 km。；降雨数据来自 NOAA（https://gis.ncdc.noaa.gov），空间分辨率为 1 km",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc014",
+      "object": "DS_ndoc014_1",
+      "evidence": "NDVI 数据来源于中国科学院生态科学数据中心（http://www.nesdc.org.cn/）。；人口密度、GDP 等人文经济数据来自 2000－2020 年四川省、陕西省、重庆市、甘肃省等各省市统计年鉴。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc014",
+      "object": "DS_ndoc014_2",
+      "evidence": "包含土壤类型、土壤质地、含沙量、土壤含水量等数据。",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc014",
+      "object": "DS_ndoc014_3",
+      "evidence": "土地利用数据来源于中国科学院资源环境科学与数据中心（https://www.resdc.cn/）",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "uses_dataset",
+      "subject": "Paper_ndoc015",
+      "object": "DS_ndoc015_0",
+      "evidence": "NDVI）来源于中国科学院资源环境科 学 与 数 据 中 心（ https://www.nesdc.org.cn）；NDVI）来源于中国科学院资源环境科 学 与 数 据 中 心（ https://www.nesdc.org.cn）",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_473f520599",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_fea43faef6",
+      "object": "Geo_e9ec9fa77e",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_2172d25cfd",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_807419b8f0",
+      "object": "Geo_4ce506f9b2",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_2e3a255990",
+      "object": "Geo_4ce506f9b2",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_0ead1ffd56",
+      "object": "Geo_e9ec9fa77e",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_ddf2a8de7d",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_c761418f5e",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_c3eb08f560",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_433ef852e7",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_a90914c732",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_a60c3633a7",
+      "object": "Geo_7a92fe9c6c",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_b22e55b004",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_c289438c5f",
+      "object": "Geo_e9ec9fa77e",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_b333da676a",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_228bd2a03e",
+      "object": "Geo_4ce506f9b2",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_1152023200",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_33c3819283",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_868b51b81b",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_be57fee22b",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_b740d630c1",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_bd6ff65510",
+      "object": "Geo_4ce506f9b2",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_18a475e70d",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_603a286240",
+      "object": "Geo_e9ec9fa77e",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_1cd9ab5b84",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_834a5d87db",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_7e850eff72",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_9118c5b985",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    },
+    {
+      "relation": "station_located_in",
+      "subject": "Station_631f554532",
+      "object": "Geo_4855445492",
+      "evidence": "",
+      "source": "backfill",
+      "created_at": "2026-10-23T01:12:24"
+    }
+  ]
+}
